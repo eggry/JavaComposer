@@ -9,4 +9,12 @@ public class Measure {
 	public void addNote(Note note) {
 		notes.add(note);
 	}
+	@Override
+	public String toString() {
+		String ret="Measure:\n";
+		for(Note n:notes) {
+			ret+='\t'+n.toString()+'\n';
+		}
+		return ret;
+	}
 }
