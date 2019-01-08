@@ -16,17 +16,9 @@ public class MidiInputParser {
 		this.file=file;
 		
 	}
-	void prase() {
-		try {
-			while(file.available()>0) {//有块就解析
-				parseTrunk();
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MidiFormatError e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	void prase() throws IOException, MidiFormatError {
+		while(file.available()>0) {//有块就解析
+			parseTrunk();
 		}
 	}
 	private void parseTrunk() throws IOException, MidiFormatError {
@@ -36,7 +28,7 @@ public class MidiInputParser {
 		file.read(buffer);
 		if(Arrays.equals(buffer, headMark)) {
 			parseHead(file.readInt());//解析头文件，读长度传过去
-			System.out.println("parseHeadOK,tick:"+ticksPerQuarterNote);//debug
+			//System.out.println("parseHeadOK,tick:"+ticksPerQuarterNote);//debug
 		}else {
 			if(Arrays.equals(buffer, trackMark)) {
 				//把内容读进来
@@ -46,7 +38,7 @@ public class MidiInputParser {
 				
 				parseTrack(new DataInputStream(new BufferedInputStream(new ByteArrayInputStream(trunkbuffer))));
 			}else {//都不是，就报错
-				throw new MidiFormatError();
+				throw new MidiFormatError("unknow TrunkHeadMark:"+Arrays.toString(buffer));
 			}
 		}
 	}
@@ -66,7 +58,7 @@ public class MidiInputParser {
 		if(trackCount!=1)throw new MidiFormatError("Contains mutiple tracks");
 		if(ticksPerQuarterNote>>>15==1)throw new MidiFormatError("division fromat must be ticks");
 	}
-	LinkedList<Measure> parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
+	void parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
 		Measure nowMeasure= new Measure();//现在正在解析的小节
 		//设小节长N个tick
 		//第一个：[0,N-1]
@@ -136,7 +128,7 @@ public class MidiInputParser {
 				if(NotesStartTime[note]==-1) {
 					NotesStartTime[note]=nowTime;
 				}else {
-					System.out.println("wow:Key"+note+"prev:"+NotesPower[note]+"now"+power);//同一个音符不松开就改力度
+					//System.out.println("wow:Key"+note+"prev:"+NotesPower[note]+"now"+power);//同一个音符不松开就改力度
 				}
 				NotesPower[note]=power;
 				break;
@@ -169,12 +161,13 @@ public class MidiInputParser {
 					byte[] buf=new byte[len];
 					ds.read(buf);
 					switch (type) {
+					// TODO 还有转换小节的事件
 					case 0x2f:{
-						System.out.println("ok!");
+						//System.out.println("ok!");
 						if(nowMeasure.noteCount()!=0) {
 							parseResult.add(nowMeasure);//添加新小节
 						}
-						return parseResult;
+						return;
 					}
 					}
 				}
@@ -182,15 +175,14 @@ public class MidiInputParser {
 				break;
 			}
 			default:{
-				throw new MidiFormatError("known opCode"+Integer.toHexString(eventCode));
+				throw new MidiFormatError("unknown opCode"+Integer.toHexString(eventCode));
 			}
 			}
 		}
-		System.out.println("running out");
+		System.out.println("running out without end!");
 		if(nowMeasure.noteCount()!=0) {
 			parseResult.add(nowMeasure);//添加新小节
 		}
-		return parseResult;
 	}
 	
 	static int getDeltaTime(DataInputStream ds) throws IOException {//解析变长数->int

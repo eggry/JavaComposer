@@ -1,5 +1,10 @@
 
-public class MidiFormatError extends Exception {
+public class MidiFormatError extends Throwable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7643873694902971452L;//自动生成，我也不知道为啥
 
 	public MidiFormatError() {
 		// TODO Auto-generated constructor stub
