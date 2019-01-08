@@ -1,4 +1,5 @@
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -42,7 +43,8 @@ public class MidiInputParser {
 				byte[] trunkbuffer=new byte[file.readInt()];
 				file.read(trunkbuffer);
 				//解析音轨
-				parseTrack(new DataInputStream(new ByteArrayInputStream(trunkbuffer)));
+				
+				parseTrack(new DataInputStream(new BufferedInputStream(new ByteArrayInputStream(trunkbuffer))));
 			}else {//都不是，就报错
 				throw new MidiFormatError();
 			}
@@ -64,7 +66,7 @@ public class MidiInputParser {
 		if(trackCount!=1)throw new MidiFormatError("Contains mutiple tracks");
 		if(ticksPerQuarterNote>>>15==1)throw new MidiFormatError("division fromat must be ticks");
 	}
-	LinkedList<Measure> parseTrack(DataInputStream ds) throws IOException {//轨道解析
+	LinkedList<Measure> parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
 		Measure nowMeasure= new Measure();//现在正在解析的小节
 		//设小节长N个tick
 		//第一个：[0,N-1]
@@ -77,34 +79,34 @@ public class MidiInputParser {
 		Arrays.fill(NotesStartTime, -1);//一开始都没有
 		
 		
-		
+		int eventCode=0;
 		while(ds.available()>0&&!end) {
 			int deltaTime=getDeltaTime(ds);
 			nowTime+=deltaTime;//更新现在时间
-			while(nowTime>=ticksPerQuarterNote*(parseResult.size()+1)) {//如果时间超过上一个小节，生成新小节
+			while(nowTime>=ticksPerMeasure*(parseResult.size()+1)) {//如果时间超过上一个小节，生成新小节
 				for(int i=0;i<256;i++) {//把没结束的写到这个小节里
 					if(NotesStartTime[i]!=-1) {
-						int startTime = Math.max(0, NotesStartTime[i]-ticksPerQuarterNote*parseResult.size());
-						int duration = ticksPerQuarterNote*(parseResult.size()+1)-1-startTime;
+						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());
+						int duration = ticksPerMeasure*(parseResult.size()+1)-1-startTime;
 						boolean prevContinue = true;
 						nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
 					}
 				}
 				parseResult.add(nowMeasure);//添加新小节
-				System.out.println(nowMeasure);
 				nowMeasure=new Measure();//来一个新的
 			}
 			
-			
-			int eventCode=ds.readUnsignedByte();//读event
-			System.out.println(Integer.toHexString(eventCode));
+			ds.mark(5);
+			int tmp=ds.readUnsignedByte();
+			ds.reset();
+			eventCode=tmp>>>7==0x0?eventCode:ds.readUnsignedByte();
 			switch (eventCode>>>4) {
 			case 0x8:{
 				int note=ds.readUnsignedByte();
 				ds.skipBytes(2);
-				int startTime = Math.max(0, NotesStartTime[note]-ticksPerQuarterNote*parseResult.size());
+				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());
 				int duration = nowTime-startTime;
-				boolean prevContinue = NotesStartTime[note]<ticksPerQuarterNote*parseResult.size();
+				boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
 				nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 				
 				NotesStartTime[note]=-1;
@@ -115,9 +117,9 @@ public class MidiInputParser {
 				int note=ds.readUnsignedByte();
 				int power=ds.readUnsignedByte();
 				if(power<15&&NotesStartTime[note]!=-1) {//之前已经按下，此次力度太小，认为按键抬起，写入。
-					int startTime = Math.max(0, NotesStartTime[note]-ticksPerQuarterNote*parseResult.size());
-					int duration = nowTime-startTime;
-					boolean prevContinue = NotesStartTime[note]<ticksPerQuarterNote*parseResult.size();
+					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());
+					int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
+					boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
 					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 					
 					NotesStartTime[note]=-1;
@@ -130,7 +132,7 @@ public class MidiInputParser {
 				if(NotesStartTime[note]==-1) {
 					NotesStartTime[note]=nowTime;
 				}else {
-					System.out.println("wow");//同一个音符不松开就改力度
+					System.out.println("wow:Key"+note+"prev:"+NotesPower[note]+"now"+power);//同一个音符不松开就改力度
 				}
 				NotesPower[note]=power;
 				break;
@@ -164,12 +166,16 @@ public class MidiInputParser {
 					ds.read(buf);
 					switch (type) {
 					case 0x2f:{
+						System.out.println("ok!");
 						return parseResult;
 					}
 					}
 				}
 				}
 				break;
+			}
+			default:{
+				throw new MidiFormatError("known opCode"+Integer.toHexString(eventCode));
 			}
 			}
 		}
