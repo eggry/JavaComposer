@@ -9,6 +9,9 @@ public class Measure {
 	public void addNote(Note note) {
 		notes.add(note);
 	}
+	public int noteCount() {
+		return notes.size();
+	}
 	@Override
 	public String toString() {
 		String ret="Measure:\n";

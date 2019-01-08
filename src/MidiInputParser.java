@@ -86,10 +86,12 @@ public class MidiInputParser {
 			while(nowTime>=ticksPerMeasure*(parseResult.size()+1)) {//如果时间超过上一个小节，生成新小节
 				for(int i=0;i<256;i++) {//把没结束的写到这个小节里
 					if(NotesStartTime[i]!=-1) {
-						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());
-						int duration = ticksPerMeasure*(parseResult.size()+1)-1-startTime;
-						boolean prevContinue = true;
-						nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
+						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());//本小节中的
+						int duration = ticksPerMeasure-startTime;
+						boolean prevContinue = NotesStartTime[i]<ticksPerMeasure*parseResult.size();
+						if(duration != 0) {
+							nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
+						}
 					}
 				}
 				parseResult.add(nowMeasure);//添加新小节
@@ -103,12 +105,13 @@ public class MidiInputParser {
 			switch (eventCode>>>4) {
 			case 0x8:{
 				int note=ds.readUnsignedByte();
-				ds.skipBytes(2);
-				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());
-				int duration = nowTime-startTime;
+				ds.skipBytes(1);
+				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
+				int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 				boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-				nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
-				
+				if(duration!=0) {
+					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
+				}
 				NotesStartTime[note]=-1;
 				NotesPower[note]=0;
 				break;
@@ -117,11 +120,12 @@ public class MidiInputParser {
 				int note=ds.readUnsignedByte();
 				int power=ds.readUnsignedByte();
 				if(power<15&&NotesStartTime[note]!=-1) {//之前已经按下，此次力度太小，认为按键抬起，写入。
-					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());
+					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
 					int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 					boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
-					
+					if(duration!=0) {
+						nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
+					}
 					NotesStartTime[note]=-1;
 					NotesPower[note]=0;
 					break;
@@ -167,6 +171,9 @@ public class MidiInputParser {
 					switch (type) {
 					case 0x2f:{
 						System.out.println("ok!");
+						if(nowMeasure.noteCount()!=0) {
+							parseResult.add(nowMeasure);//添加新小节
+						}
 						return parseResult;
 					}
 					}
@@ -178,6 +185,10 @@ public class MidiInputParser {
 				throw new MidiFormatError("known opCode"+Integer.toHexString(eventCode));
 			}
 			}
+		}
+		System.out.println("running out");
+		if(nowMeasure.noteCount()!=0) {
+			parseResult.add(nowMeasure);//添加新小节
 		}
 		return parseResult;
 	}
