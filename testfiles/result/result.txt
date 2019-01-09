@@ -1,0 +1,541 @@
+totalCount:2114uniqueCount:1645Ave:24
+Choose random head
+Choose ordered next
+Choose random next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose random next
+Choose ordered next
+Choose random next
+Choose ordered next
+Choose random next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose ordered next
+Choose random next
+Choose random next
+Exit because outAve
+[Measure:
+	startTime=0, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=0, duration=60, keyName=57, power=120, prevContinue=false
+	startTime=0, duration=90, keyName=36, power=120, prevContinue=false
+	startTime=60, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=60, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=90, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=90, duration=90, keyName=36, power=120, prevContinue=false
+	startTime=120, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=120, duration=60, keyName=57, power=120, prevContinue=false
+	startTime=120, duration=120, keyName=38, power=114, prevContinue=false
+	startTime=180, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=180, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=180, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=210, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=240, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=240, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=240, duration=60, keyName=57, power=120, prevContinue=false
+	startTime=300, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=300, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=300, duration=120, keyName=36, power=120, prevContinue=false
+	startTime=330, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=360, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=360, duration=60, keyName=57, power=120, prevContinue=false
+	startTime=360, duration=120, keyName=38, power=114, prevContinue=false
+	startTime=420, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=420, duration=30, keyName=57, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=450, duration=30, keyName=57, power=120, prevContinue=false
+, Measure:
+	startTime=0, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=0, duration=60, keyName=59, power=120, prevContinue=false
+	startTime=0, duration=90, keyName=36, power=120, prevContinue=false
+	startTime=60, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=60, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=90, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=90, duration=90, keyName=36, power=120, prevContinue=false
+	startTime=120, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=120, duration=60, keyName=59, power=120, prevContinue=false
+	startTime=120, duration=120, keyName=38, power=114, prevContinue=false
+	startTime=180, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=180, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=180, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=210, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=240, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=240, duration=60, keyName=59, power=120, prevContinue=false
+	startTime=240, duration=180, keyName=36, power=120, prevContinue=false
+	startTime=300, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=300, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=330, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=360, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=360, duration=60, keyName=59, power=120, prevContinue=false
+	startTime=360, duration=120, keyName=38, power=114, prevContinue=false
+	startTime=420, duration=30, keyName=51, power=101, prevContinue=false
+	startTime=420, duration=30, keyName=59, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=450, duration=30, keyName=59, power=120, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=50, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=57, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=62, power=107, prevContinue=false
+	startTime=0, duration=300, keyName=59, power=113, prevContinue=false
+	startTime=0, duration=300, keyName=71, power=113, prevContinue=false
+	startTime=180, duration=180, keyName=50, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=57, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=62, power=107, prevContinue=false
+	startTime=360, duration=60, keyName=50, power=120, prevContinue=false
+	startTime=360, duration=60, keyName=61, power=83, prevContinue=false
+	startTime=420, duration=60, keyName=50, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=64, power=92, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=54, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=57, power=115, prevContinue=false
+	startTime=0, duration=180, keyName=61, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=66, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=69, power=115, prevContinue=false
+	startTime=180, duration=300, keyName=54, power=89, prevContinue=false
+	startTime=180, duration=300, keyName=61, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=66, power=89, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=54, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=61, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=66, power=107, prevContinue=false
+	startTime=0, duration=300, keyName=57, power=111, prevContinue=false
+	startTime=0, duration=300, keyName=69, power=111, prevContinue=false
+	startTime=180, duration=180, keyName=54, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=61, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=66, power=79, prevContinue=false
+	startTime=360, duration=60, keyName=57, power=75, prevContinue=false
+	startTime=360, duration=60, keyName=69, power=75, prevContinue=false
+	startTime=360, duration=120, keyName=54, power=79, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=50, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=57, power=95, prevContinue=false
+	startTime=0, duration=180, keyName=62, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=69, power=95, prevContinue=false
+	startTime=180, duration=300, keyName=50, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=54, power=80, prevContinue=false
+	startTime=180, duration=300, keyName=57, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=62, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=66, power=80, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=50, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=57, power=111, prevContinue=false
+	startTime=0, duration=180, keyName=62, power=107, prevContinue=false
+	startTime=0, duration=240, keyName=69, power=111, prevContinue=false
+	startTime=180, duration=60, keyName=57, power=107, prevContinue=false
+	startTime=180, duration=180, keyName=50, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=62, power=107, prevContinue=false
+	startTime=300, duration=60, keyName=54, power=78, prevContinue=false
+	startTime=300, duration=60, keyName=66, power=78, prevContinue=false
+	startTime=360, duration=60, keyName=50, power=120, prevContinue=false
+	startTime=360, duration=60, keyName=57, power=89, prevContinue=false
+	startTime=360, duration=60, keyName=69, power=89, prevContinue=false
+	startTime=420, duration=60, keyName=50, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=59, power=90, prevContinue=false
+	startTime=420, duration=60, keyName=71, power=90, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=49, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=56, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=61, power=118, prevContinue=false
+	startTime=180, duration=300, keyName=49, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=56, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=61, power=107, prevContinue=false
+	startTime=180, duration=300, keyName=62, power=91, prevContinue=false
+	startTime=360, duration=120, keyName=71, power=82, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=61, power=114, prevContinue=false
+	startTime=0, duration=180, keyName=49, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=56, power=107, prevContinue=false
+	startTime=60, duration=60, keyName=61, power=101, prevContinue=false
+	startTime=120, duration=60, keyName=61, power=93, prevContinue=false
+	startTime=180, duration=60, keyName=61, power=90, prevContinue=false
+	startTime=180, duration=180, keyName=49, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=56, power=107, prevContinue=false
+	startTime=240, duration=60, keyName=61, power=88, prevContinue=false
+	startTime=300, duration=60, keyName=61, power=89, prevContinue=false
+	startTime=360, duration=60, keyName=49, power=120, prevContinue=false
+	startTime=360, duration=60, keyName=61, power=92, prevContinue=false
+	startTime=420, duration=60, keyName=49, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=61, power=101, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=66, power=115, prevContinue=false
+	startTime=0, duration=180, keyName=54, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=61, power=107, prevContinue=false
+	startTime=60, duration=60, keyName=64, power=119, prevContinue=false
+	startTime=120, duration=60, keyName=66, power=116, prevContinue=false
+	startTime=180, duration=300, keyName=54, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=61, power=111, prevContinue=false
+	startTime=180, duration=300, keyName=66, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=60, power=88, prevContinue=false
+	startTime=0, duration=120, keyName=53, power=88, prevContinue=false
+	startTime=0, duration=180, keyName=65, power=101, prevContinue=false
+	startTime=0, duration=180, keyName=70, power=120, prevContinue=false
+	startTime=120, duration=60, keyName=58, power=88, prevContinue=false
+	startTime=180, duration=60, keyName=60, power=88, prevContinue=false
+	startTime=180, duration=180, keyName=53, power=88, prevContinue=false
+	startTime=180, duration=300, keyName=65, power=101, prevContinue=false
+	startTime=240, duration=60, keyName=60, power=88, prevContinue=false
+	startTime=360, duration=60, keyName=58, power=88, prevContinue=false
+	startTime=420, duration=60, keyName=60, power=88, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=58, power=88, prevContinue=false
+	startTime=0, duration=120, keyName=51, power=88, prevContinue=false
+	startTime=0, duration=480, keyName=63, power=101, prevContinue=false
+	startTime=0, duration=480, keyName=70, power=118, prevContinue=false
+	startTime=120, duration=60, keyName=57, power=88, prevContinue=false
+	startTime=180, duration=60, keyName=58, power=88, prevContinue=false
+	startTime=240, duration=60, keyName=58, power=88, prevContinue=false
+	startTime=300, duration=60, keyName=51, power=88, prevContinue=false
+	startTime=360, duration=60, keyName=57, power=88, prevContinue=false
+	startTime=420, duration=60, keyName=58, power=88, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=0, duration=90, keyName=40, power=114, prevContinue=false
+	startTime=0, duration=90, keyName=41, power=127, prevContinue=false
+	startTime=0, duration=90, keyName=59, power=114, prevContinue=false
+	startTime=0, duration=90, keyName=64, power=114, prevContinue=false
+	startTime=0, duration=420, keyName=49, power=114, prevContinue=false
+	startTime=60, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=90, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=90, duration=90, keyName=40, power=114, prevContinue=false
+	startTime=90, duration=90, keyName=41, power=127, prevContinue=false
+	startTime=90, duration=90, keyName=59, power=114, prevContinue=false
+	startTime=90, duration=90, keyName=64, power=114, prevContinue=false
+	startTime=120, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=180, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=180, duration=60, keyName=40, power=114, prevContinue=false
+	startTime=180, duration=60, keyName=41, power=127, prevContinue=false
+	startTime=180, duration=60, keyName=59, power=114, prevContinue=false
+	startTime=180, duration=60, keyName=64, power=114, prevContinue=false
+	startTime=180, duration=180, keyName=66, power=88, prevContinue=false
+	startTime=210, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=240, duration=30, keyName=41, power=127, prevContinue=false
+	startTime=240, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=240, duration=90, keyName=40, power=114, prevContinue=false
+	startTime=240, duration=90, keyName=59, power=114, prevContinue=false
+	startTime=240, duration=90, keyName=64, power=114, prevContinue=false
+	startTime=270, duration=30, keyName=41, power=127, prevContinue=false
+	startTime=300, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=300, duration=60, keyName=41, power=127, prevContinue=false
+	startTime=330, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=330, duration=90, keyName=40, power=114, prevContinue=false
+	startTime=330, duration=90, keyName=59, power=114, prevContinue=false
+	startTime=330, duration=90, keyName=64, power=88, prevContinue=false
+	startTime=360, duration=60, keyName=41, power=127, prevContinue=false
+	startTime=360, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=420, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=420, duration=60, keyName=40, power=114, prevContinue=false
+	startTime=420, duration=60, keyName=41, power=127, prevContinue=false
+	startTime=420, duration=60, keyName=49, power=120, prevContinue=false
+	startTime=420, duration=60, keyName=59, power=114, prevContinue=false
+	startTime=420, duration=60, keyName=64, power=114, prevContinue=false
+	startTime=450, duration=30, keyName=54, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=0, duration=60, keyName=63, power=114, prevContinue=false
+	startTime=0, duration=90, keyName=39, power=114, prevContinue=false
+	startTime=0, duration=90, keyName=41, power=127, prevContinue=false
+	startTime=0, duration=90, keyName=58, power=114, prevContinue=false
+	startTime=0, duration=180, keyName=49, power=114, prevContinue=false
+	startTime=60, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=60, duration=30, keyName=63, power=88, prevContinue=false
+	startTime=90, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=90, duration=30, keyName=63, power=114, prevContinue=false
+	startTime=90, duration=90, keyName=39, power=114, prevContinue=false
+	startTime=90, duration=90, keyName=41, power=127, prevContinue=false
+	startTime=90, duration=90, keyName=58, power=114, prevContinue=false
+	startTime=120, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=120, duration=60, keyName=63, power=88, prevContinue=false
+	startTime=180, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=180, duration=60, keyName=39, power=114, prevContinue=false
+	startTime=180, duration=60, keyName=58, power=114, prevContinue=false
+	startTime=180, duration=60, keyName=63, power=114, prevContinue=false
+	startTime=180, duration=150, keyName=41, power=127, prevContinue=false
+	startTime=180, duration=300, keyName=49, power=120, prevContinue=false
+	startTime=210, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=240, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=240, duration=90, keyName=39, power=114, prevContinue=false
+	startTime=240, duration=90, keyName=58, power=114, prevContinue=false
+	startTime=240, duration=90, keyName=63, power=114, prevContinue=false
+	startTime=300, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=330, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=330, duration=90, keyName=39, power=114, prevContinue=false
+	startTime=330, duration=90, keyName=41, power=127, prevContinue=false
+	startTime=330, duration=90, keyName=58, power=114, prevContinue=false
+	startTime=330, duration=90, keyName=63, power=114, prevContinue=false
+	startTime=360, duration=60, keyName=54, power=107, prevContinue=false
+	startTime=420, duration=30, keyName=54, power=107, prevContinue=false
+	startTime=420, duration=60, keyName=39, power=114, prevContinue=false
+	startTime=420, duration=60, keyName=41, power=127, prevContinue=false
+	startTime=420, duration=60, keyName=58, power=114, prevContinue=false
+	startTime=420, duration=60, keyName=63, power=114, prevContinue=false
+	startTime=450, duration=30, keyName=54, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=69, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=33, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=57, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=64, power=92, prevContinue=false
+	startTime=180, duration=300, keyName=69, power=121, prevContinue=false
+	startTime=360, duration=60, keyName=66, power=120, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=67, power=107, prevContinue=false
+	startTime=0, duration=240, keyName=31, power=116, prevContinue=false
+	startTime=0, duration=240, keyName=55, power=92, prevContinue=false
+	startTime=0, duration=240, keyName=62, power=92, prevContinue=false
+	startTime=0, duration=240, keyName=64, power=123, prevContinue=false
+	startTime=120, duration=240, keyName=71, power=120, prevContinue=false
+	startTime=180, duration=60, keyName=67, power=107, prevContinue=false
+	startTime=180, duration=240, keyName=69, power=107, prevContinue=false
+	startTime=240, duration=240, keyName=33, power=116, prevContinue=false
+	startTime=240, duration=240, keyName=57, power=92, prevContinue=false
+	startTime=240, duration=240, keyName=64, power=120, prevContinue=false
+	startTime=240, duration=240, keyName=66, power=121, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=71, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=35, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=59, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=66, power=92, prevContinue=false
+	startTime=180, duration=60, keyName=71, power=107, prevContinue=false
+	startTime=240, duration=240, keyName=71, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=69, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=33, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=57, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=64, power=92, prevContinue=false
+	startTime=120, duration=360, keyName=71, power=123, prevContinue=false
+	startTime=180, duration=300, keyName=69, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=120, keyName=71, power=123, prevContinue=true
+	startTime=0, duration=180, keyName=67, power=107, prevContinue=false
+	startTime=0, duration=360, keyName=62, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=31, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=55, power=92, prevContinue=false
+	startTime=120, duration=60, keyName=71, power=121, prevContinue=false
+	startTime=180, duration=240, keyName=71, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=67, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=69, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=33, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=57, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=64, power=92, prevContinue=false
+	startTime=180, duration=240, keyName=71, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=69, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=71, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=35, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=59, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=66, power=120, prevContinue=false
+	startTime=180, duration=240, keyName=71, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=120, keyName=66, power=92, prevContinue=false
+	startTime=0, duration=180, keyName=71, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=35, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=59, power=92, prevContinue=false
+	startTime=180, duration=60, keyName=71, power=107, prevContinue=false
+	startTime=240, duration=240, keyName=69, power=121, prevContinue=false
+	startTime=420, duration=60, keyName=66, power=123, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=69, power=107, prevContinue=true
+	startTime=0, duration=480, keyName=33, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=57, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=64, power=92, prevContinue=false
+	startTime=180, duration=180, keyName=69, power=107, prevContinue=false
+	startTime=360, duration=60, keyName=66, power=121, prevContinue=false
+	startTime=420, duration=60, keyName=69, power=123, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=67, power=107, prevContinue=false
+	startTime=0, duration=240, keyName=31, power=116, prevContinue=false
+	startTime=0, duration=240, keyName=55, power=92, prevContinue=false
+	startTime=0, duration=240, keyName=62, power=92, prevContinue=false
+	startTime=0, duration=240, keyName=71, power=123, prevContinue=false
+	startTime=180, duration=60, keyName=67, power=107, prevContinue=false
+	startTime=240, duration=240, keyName=33, power=116, prevContinue=false
+	startTime=240, duration=240, keyName=57, power=92, prevContinue=false
+	startTime=240, duration=240, keyName=64, power=92, prevContinue=false
+	startTime=240, duration=240, keyName=69, power=107, prevContinue=false
+	startTime=360, duration=60, keyName=71, power=121, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=71, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=35, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=59, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=66, power=92, prevContinue=false
+	startTime=180, duration=60, keyName=71, power=107, prevContinue=false
+	startTime=240, duration=240, keyName=71, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=180, keyName=69, power=107, prevContinue=false
+	startTime=0, duration=480, keyName=33, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=57, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=64, power=92, prevContinue=false
+	startTime=120, duration=360, keyName=71, power=120, prevContinue=false
+	startTime=180, duration=300, keyName=69, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=120, keyName=71, power=120, prevContinue=true
+	startTime=0, duration=180, keyName=67, power=107, prevContinue=false
+	startTime=0, duration=360, keyName=62, power=92, prevContinue=false
+	startTime=0, duration=480, keyName=31, power=116, prevContinue=false
+	startTime=0, duration=480, keyName=55, power=92, prevContinue=false
+	startTime=120, duration=60, keyName=71, power=123, prevContinue=false
+	startTime=180, duration=240, keyName=71, power=121, prevContinue=false
+	startTime=180, duration=300, keyName=67, power=107, prevContinue=false
+, Measure:
+	startTime=0, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=0, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=0, duration=60, keyName=33, power=127, prevContinue=false
+	startTime=0, duration=60, keyName=35, power=124, prevContinue=false
+	startTime=0, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=30, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=60, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=60, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=60, duration=60, keyName=69, power=118, prevContinue=false
+	startTime=60, duration=120, keyName=35, power=124, prevContinue=false
+	startTime=90, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=120, duration=30, keyName=33, power=127, prevContinue=false
+	startTime=120, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=120, duration=60, keyName=38, power=95, prevContinue=false
+	startTime=120, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=150, duration=30, keyName=33, power=127, prevContinue=false
+	startTime=150, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=180, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=180, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=180, duration=60, keyName=33, power=127, prevContinue=false
+	startTime=180, duration=60, keyName=38, power=95, prevContinue=false
+	startTime=180, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=180, duration=60, keyName=69, power=118, prevContinue=false
+	startTime=180, duration=120, keyName=35, power=124, prevContinue=false
+	startTime=210, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=240, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=240, duration=60, keyName=38, power=95, prevContinue=false
+	startTime=270, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=300, duration=30, keyName=38, power=95, prevContinue=false
+	startTime=300, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=300, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=300, duration=60, keyName=33, power=127, prevContinue=false
+	startTime=300, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=300, duration=60, keyName=69, power=118, prevContinue=false
+	startTime=300, duration=120, keyName=35, power=124, prevContinue=false
+	startTime=330, duration=30, keyName=38, power=95, prevContinue=false
+	startTime=330, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=360, duration=30, keyName=31, power=127, prevContinue=false
+	startTime=360, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=360, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=360, duration=60, keyName=38, power=95, prevContinue=false
+	startTime=360, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=390, duration=30, keyName=31, power=127, prevContinue=false
+	startTime=390, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=420, duration=30, keyName=38, power=95, prevContinue=false
+	startTime=420, duration=30, keyName=42, power=101, prevContinue=false
+	startTime=420, duration=30, keyName=45, power=124, prevContinue=false
+	startTime=420, duration=60, keyName=33, power=127, prevContinue=false
+	startTime=420, duration=60, keyName=35, power=124, prevContinue=false
+	startTime=420, duration=60, keyName=52, power=124, prevContinue=false
+	startTime=420, duration=60, keyName=69, power=118, prevContinue=false
+	startTime=450, duration=30, keyName=38, power=95, prevContinue=false
+	startTime=450, duration=30, keyName=45, power=124, prevContinue=false
+, Measure:
+	startTime=0, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=0, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=0, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=0, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=0, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=0, duration=180, keyName=36, power=120, prevContinue=false
+	startTime=0, duration=180, keyName=64, power=127, prevContinue=false
+	startTime=30, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=30, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=30, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=30, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=60, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=60, duration=14, keyName=46, power=100, prevContinue=false
+	startTime=60, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=60, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=60, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=60, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=90, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=90, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=90, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=90, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=90, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=120, duration=14, keyName=38, power=100, prevContinue=false
+	startTime=120, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=120, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=120, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=120, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=120, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=150, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=150, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=150, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=150, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=180, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=180, duration=14, keyName=46, power=100, prevContinue=false
+	startTime=180, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=180, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=180, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=180, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=180, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=180, duration=180, keyName=65, power=127, prevContinue=false
+	startTime=210, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=210, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=210, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=210, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=210, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=240, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=240, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=240, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=240, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=240, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=240, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=270, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=270, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=270, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=270, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=300, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=300, duration=14, keyName=46, power=100, prevContinue=false
+	startTime=300, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=300, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=300, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=300, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=300, duration=120, keyName=36, power=120, prevContinue=false
+	startTime=330, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=330, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=330, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=330, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=330, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=360, duration=14, keyName=38, power=100, prevContinue=false
+	startTime=360, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=360, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=360, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=360, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=360, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=390, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=390, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=390, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=390, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=420, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=420, duration=14, keyName=46, power=100, prevContinue=false
+	startTime=420, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=420, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=420, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=420, duration=30, keyName=67, power=107, prevContinue=false
+	startTime=420, duration=60, keyName=36, power=120, prevContinue=false
+	startTime=450, duration=14, keyName=42, power=100, prevContinue=false
+	startTime=450, duration=30, keyName=48, power=107, prevContinue=false
+	startTime=450, duration=30, keyName=55, power=107, prevContinue=false
+	startTime=450, duration=30, keyName=60, power=107, prevContinue=false
+	startTime=450, duration=30, keyName=67, power=107, prevContinue=false
+]
+MeasureCnt:29
+Enter path of output Midi File:
+writeOK
