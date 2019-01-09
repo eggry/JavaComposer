@@ -1,6 +1,9 @@
+import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -33,6 +36,20 @@ public class Main {
 			
 		}
 		System.out.println("totalCount:"+mc.totalMeasureCount+"uniqueCount:"+mc.uniqueMeasureCount());
+		mc.generate();
+		System.out.println("Enter path of output Midi File:(-1 to stop)");
+		try {
+			MidiOutputParser mop=new MidiOutputParser(new DataOutputStream(new BufferedOutputStream(new FileOutputStream(in.nextLine().trim()))));
+			mop.writeFile(mc.result);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Can't write file:"+inputStr);
+			e.printStackTrace();
+		}
+		
 		in.close();
+		
+		
+		
 	}
 }

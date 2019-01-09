@@ -9,6 +9,7 @@ public class MarkovChain {
 	int totalMeasureCount;//一共有多少小节
 	LinkedList<Integer> headIds;//哪几个是开头
 	LinkedList<Integer> tailIds;//哪几个是结尾
+	LinkedList<Measure> result;
 	int[][] countMap=new int[10000][10000];//cM[i][j]:i接下来是j的次数
 	public MarkovChain() {
 		nextId=0;
@@ -37,5 +38,8 @@ public class MarkovChain {
 			prevNode=nowNode;
 		}
 		tailIds.add(prevNode);
+	}
+	public void generate() {
+		
 	}
 }
