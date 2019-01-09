@@ -1,27 +1,32 @@
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+
 class MidiOutputParser{
 	DataOutputStream dos;
-	ArrayList<Byte> music=new ArrayList<Byte>();//æŒ‰byteå‚¨å­˜è¦è¾“å‡ºçš„æ•°æ®
+	ArrayList<Byte> music=new ArrayList<Byte>();//°´byte´¢´æÒªÊä³öµÄÊı¾İ
 	public MidiOutputParser(DataOutputStream dataOutputStream) {
 		dos=dataOutputStream;
 	}
-	private	void transfer(int x){//ä¸å®šé•¿æ•°å­—è½¬åŒ–
+	void transfer(int x){//²»¶¨³¤Êı×Ö×ª»¯
 		byte[] bit=new byte[1010];
 		int now=-1;
 		byte temp;
-		if(x==0) {//0çš„æ—¶å€™è¦ç‰¹åˆ¤ä¸€ä¸‹
-			music.add((byte) 0);
+		if(x==0) {//0µÄÊ±ºòÒªÌØÅĞÒ»ÏÂ
 			music.add((byte) 0);
 			return ;
 		}
-		while(x!=0) {//å…ˆæ‹†åˆ†æˆäºŒè¿›åˆ¶
+		while(x!=0) {//ÏÈ²ğ·Ö³É¶ş½øÖÆ
 			bit[++now]=(byte)(x%2);
 			x=x/2;
 		}
-		while(now%7!=0) {//7ä½ä¸€ç»„ï¼Œä¸å¤Ÿç”¨0è¡¥é½
+		while(now%7!=0) {//7Î»Ò»×é£¬²»¹»ÓÃ0²¹Æë
 			now++;
 			bit[now]=0;
 		}
-		while(now>7) {//ä¸åˆ°æœ€åï¼Œè½¬æ¢ä¸ºæ­£å¸¸byteç±»å‹
+		while(now>7) {//²»µ½×îºó£¬×ª»»ÎªÕı³£byteÀàĞÍ
 			temp=0;
 			temp+=8*1+4*bit[now]+2*bit[now-1]+bit[now-2];
 			music.add(temp);
@@ -30,7 +35,7 @@ class MidiOutputParser{
 			music.add(temp);
 			now-=7;
 		}
-		if(now==7) {//å½“åˆ°ç»“æŸæ—¶
+		if(now==7) {//µ±µ½½áÊøÊ±
 			temp=0;
 			temp+=8*0+4*bit[now]+2*bit[now-1]+bit[now-2];
 			music.add(temp);
@@ -46,22 +51,22 @@ class MidiOutputParser{
 		return yy;
 	}
 	void writeFile(LinkedList<Measure> filee) {
-		final byte[] head= {0x4d,0x54,0x68,0x64,0x00,0x00,0x00,0x06,0x00,0x00,0x00,0x01,0x00,0x78,0x4d,0x54,0x72,0x6B};//æ–‡ä»¶å¤´çš„å¤´å—
+		final byte[] head= {0x4d,0x54,0x68,0x64,0x00,0x00,0x00,0x06,0x00,0x00,0x00,0x01,0x00,0x78,0x4d,0x54,0x72,0x6B};//ÎÄ¼şÍ·µÄÍ·¿é
 		Note[] temp=new Note[1000010];
 		int top,end,num;
 		try {
-			dos.write(head);//è¾“å‡ºå¤´å—
+			dos.write(head);//Êä³öÍ·¿é
 			top=-1;
 			end=-1;
 			num=0;
-			for(Measure str:filee){//æ‰«æéŸ³ç¬¦ï¼Œå¹¶æ·»åŠ å…³éŸ³æ“ä½œï¼Œå¹¶å°†start timeè½¬åŒ–ä¸ºå…¨å±€æ—¶é—´
+			for(Measure str:filee){//É¨ÃèÒô·û£¬²¢Ìí¼Ó¹ØÒô²Ù×÷£¬²¢½«start time×ª»¯ÎªÈ«¾ÖÊ±¼ä
 				for(Note value:str.notes) {
 					temp[++top]=new Note(num*(0x78)+value.startTime,value.duration,value.keyName,value.power,value.prevContinue);
 					temp[++top]=new Note(num*(0x78)+value.startTime+value.duration,0,value.keyName,0,value.prevContinue);
 				}
 				num++;
 			}
-			Arrays.sort(temp,0,top+1);//æ’åºè¾“å‡º
+			Arrays.sort(temp,0,top+1);//ÅÅĞòÊä³ö
 			for(int i=0;i<=top;i++) {
 				if(i==0)
 					transfer(0);
@@ -70,13 +75,13 @@ class MidiOutputParser{
 				music.add((byte) 0x90);
 				music.add((byte) temp[i].keyName);
 				music.add((byte) temp[i].power);
-				end=max(end,temp[i].startTime);//ç»“æŸè‚¯å®šæ˜¯å…³é—­æŸä¸ªéŸ³ç¬¦ï¼Œæ‰¾startæœ€å¤§çš„
+				end=max(end,temp[i].startTime);//½áÊø¿Ï¶¨ÊÇ¹Ø±ÕÄ³¸öÒô·û£¬ÕÒstart×î´óµÄ
 			}
-			transfer(0);//è½¨é“ç»“æŸæ—¶é—´
+			transfer(0);//¹ìµÀ½áÊøÊ±¼ä
 			dos.writeInt(music.size()+3);
-			for(int i=0;i<music.size();i++) //ä¾æ¬¡è¾“å‡º
+			for(int i=0;i<music.size();i++) //ÒÀ´ÎÊä³ö
 				dos.write(music.get(i));
-			dos.write(0xff);//è½¨é“ç»“æŸæ ‡è¯†
+			dos.write(0xff);//¹ìµÀ½áÊø±êÊ¶
 			dos.write(0x2F);
 			dos.write(0x00);
 		} catch (IOException e) {

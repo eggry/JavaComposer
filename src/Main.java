@@ -51,7 +51,7 @@ public class Main {
 			System.err.println("Can't write file:");
 			e.printStackTrace();
 		}
-		
+		System.out.println(mip.parseResult);
 		in.close();
 		
 		
