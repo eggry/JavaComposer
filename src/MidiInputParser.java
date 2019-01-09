@@ -8,34 +8,35 @@ import java.util.LinkedList;
 
 
 public class MidiInputParser {
-	DataInputStream file;
+	DataInputStream file;//数据输入流
 	int ticksPerQuarterNote;//一个四分音符几个tick
 	int ticksPerMeasure;//一个小节几个tick
-	LinkedList<Measure> parseResult=new LinkedList<Measure>();//分好小节的
+	final static int minNote=23;//C2的do，比这个音低的都忽略
+	final static int maxNote=71;//C4的si，比这个高的音都忽略
+	final static int minPower=30;//小于这个声音的都认为是静音
+	LinkedList<Measure> parseResult=new LinkedList<Measure>();//分好小节的解析结果
 	public MidiInputParser(DataInputStream file){//拿一个输入流构造解析器
 		this.file=file;
-		
 	}
-	void prase() throws IOException, MidiFormatError {
+	void prase() throws IOException, MidiFormatError {//解析
 		while(file.available()>0) {//有块就解析
 			parseTrunk();
 		}
 	}
 	private void parseTrunk() throws IOException, MidiFormatError {
-		final byte[] headMark= {0x4d,0x54,0x68,0x64};//文件头的头
+		final byte[] headMark= {0x4d,0x54,0x68,0x64};//头块的头
 		final byte[] trackMark={0x4d,0x54,0x72,0x6B};//内容块的头
 		byte[] buffer=new byte[4];
-		file.read(buffer);
-		if(Arrays.equals(buffer, headMark)) {
+		file.read(buffer);//头四个字节读进来
+		if(Arrays.equals(buffer, headMark)) {//如果是头块的头
 			parseHead(file.readInt());//解析头文件，读长度传过去
 			//System.out.println("parseHeadOK,tick:"+ticksPerQuarterNote);//debug
 		}else {
-			if(Arrays.equals(buffer, trackMark)) {
+			if(Arrays.equals(buffer, trackMark)) {//如果内容块的头
 				//把内容读进来
 				byte[] trunkbuffer=new byte[file.readInt()];
 				file.read(trunkbuffer);
-				//解析音轨
-				
+				//解析音轨，输入流用buffer封装
 				parseTrack(new DataInputStream(new BufferedInputStream(new ByteArrayInputStream(trunkbuffer))));
 			}else {//都不是，就报错
 				throw new MidiFormatError("unknow TrunkHeadMark:"+Arrays.toString(buffer));
@@ -53,35 +54,41 @@ public class MidiInputParser {
 		this.ticksPerQuarterNote=file.readUnsignedShort();//一个四分音符几个tick
 		this.ticksPerMeasure=4*ticksPerQuarterNote;//计算一个小节几个tick，未指定时默认4/4拍，即一小节是四个四分音符
 		file.skip(length-6);//跳过剩余头部
-		//判读是不是不标准
-		if(format!=0)throw new MidiFormatError("Isn't single track file format");
-		if(trackCount!=1)throw new MidiFormatError("Contains mutiple tracks");
-		if(ticksPerQuarterNote>>>15==1)throw new MidiFormatError("division fromat must be ticks");
+		//判断是不是不支持的格式
+		if(format!=0) {//必须是0格式
+			throw new MidiFormatError("Isn't single track file format");
+		}
+		if(trackCount!=1) {//0格式只有1个轨道
+			throw new MidiFormatError("Contains mutiple tracks");
+		}
+		if(ticksPerQuarterNote>>>15==1) {//时间码是tick格式
+			throw new MidiFormatError("division fromat must be ticks");
+		}
 	}
 	void parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
-		Measure nowMeasure= new Measure();//现在正在解析的小节
+		if(!ds.markSupported()) {//输入流必须支持mark
+			throw new IllegalArgumentException("DataInputStream must be buffered!");
+		}
 		//设小节长N个tick
 		//第一个：[0,N-1]
 		//第二个：[N,2N-1]
 		//...
-		boolean end=false;//是否退出解析
+		Measure nowMeasure= new Measure();//现在正在解析的小节
 		int nowTime=0;//现在tick数
-		int[] NotesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子开始计算！），目前没有的用-1
+		int[] NotesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子头开始计算！），目前没有的用-1
 		int[] NotesPower= new int [256];//记录每个音符的力度，目前没有的用0
 		Arrays.fill(NotesStartTime, -1);//一开始都没有
-		
-		
-		int eventCode=0;
-		while(ds.available()>0&&!end) {
-			int deltaTime=getDeltaTime(ds);
+		int eventCode=0;//事件编号
+		while(ds.available()>0) {//有就一直读
+			int deltaTime=getDeltaTime(ds);//解析deltaTime
 			nowTime+=deltaTime;//更新现在时间
 			while(nowTime>=ticksPerMeasure*(parseResult.size()+1)) {//如果时间超过上一个小节，生成新小节
-				for(int i=0;i<256;i++) {//把没结束的写到这个小节里
+				for(int i=minNote;i<=maxNote;i++) {//把没结束的写到这个小节里
 					if(NotesStartTime[i]!=-1) {
 						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());//本小节中的
 						int duration = ticksPerMeasure-startTime;
 						boolean prevContinue = NotesStartTime[i]<ticksPerMeasure*parseResult.size();
-						if(duration != 0) {
+						if(duration != 0&& duration<ticksPerMeasure) {
 							nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
 						}
 					}
@@ -101,7 +108,7 @@ public class MidiInputParser {
 				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
 				int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 				boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-				if(duration!=0) {
+				if(duration != 0&& duration<ticksPerMeasure) {
 					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 				}
 				NotesStartTime[note]=-1;
@@ -111,18 +118,21 @@ public class MidiInputParser {
 			case 0x9:{
 				int note=ds.readUnsignedByte();
 				int power=ds.readUnsignedByte();
-				if(power<15&&NotesStartTime[note]!=-1) {//之前已经按下，此次力度太小，认为按键抬起，写入。
+				if(note<minNote||note>maxNote) {
+					break;//太小的直接忽略
+				}
+				if(power<minPower&&NotesStartTime[note]!=-1) {//之前已经按下，此次力度太小，认为按键抬起，写入。
 					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
 					int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 					boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-					if(duration!=0) {
+					if(duration != 0&& duration<ticksPerMeasure) {
 						nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 					}
 					NotesStartTime[note]=-1;
 					NotesPower[note]=0;
 					break;
 				}
-				if(power<15) {//力度太小直接忽略
+				if(power<minPower) {//力度太小直接忽略
 					break;
 				}
 				if(NotesStartTime[note]==-1) {
