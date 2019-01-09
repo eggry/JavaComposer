@@ -55,8 +55,8 @@ class MidiOutputParser{
 			num=0;
 			for(Measure str:filee){//扫描音符，并添加关音操作，并将start time转化为全局时间
 				for(Note value:str.notes) {
-					temp[++top]=new Note(num*(0x78)+value.startTime,value.duration,value.keyName,value.power,value.prevContinue);
-					temp[++top]=new Note(num*(0x78)+value.startTime+value.duration,0,value.keyName,0,value.prevContinue);
+					temp[++top]=new Note(num*(0x78*4)+value.startTime,value.duration,value.keyName,value.power,value.prevContinue);
+					temp[++top]=new Note(num*(0x78*4)+value.startTime+value.duration,0,value.keyName,0,value.prevContinue);
 				}
 				num++;
 			}
