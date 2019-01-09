@@ -88,7 +88,7 @@ public class MidiInputParser {
 						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());//本小节中的
 						int duration = ticksPerMeasure-startTime;
 						boolean prevContinue = NotesStartTime[i]<ticksPerMeasure*parseResult.size();
-						if(duration != 0&& duration<ticksPerMeasure) {
+						if(duration != 0) {
 							nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
 						}
 					}
@@ -108,7 +108,7 @@ public class MidiInputParser {
 				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
 				int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 				boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-				if(duration != 0&& duration<ticksPerMeasure) {
+				if(duration != 0) {
 					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 				}
 				NotesStartTime[note]=-1;
@@ -125,7 +125,7 @@ public class MidiInputParser {
 					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
 					int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
 					boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-					if(duration != 0&& duration<ticksPerMeasure) {
+					if(duration != 0) {
 						nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
 					}
 					NotesStartTime[note]=-1;
