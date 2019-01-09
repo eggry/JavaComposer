@@ -2,7 +2,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Measure implements Comparable<Measure>{
-	private Set<Note> notes;
+	Set<Note> notes;
 	public Measure() {
 		notes=new TreeSet<Note>();
 	}
@@ -14,7 +14,7 @@ public class Measure implements Comparable<Measure>{
 	}
 
 	@Override
-	public boolean equals(Object obj) {//ͬ��
+	public boolean equals(Object obj) {//Í¬ÉÏ
 		return this.toString()==obj.toString();
 	}
 	@Override
