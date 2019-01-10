@@ -11,7 +11,7 @@ class MidiOutputParser{
 		dos=dataOutputStream;
 	}
 	void transfer(int x){//不定长数字转化
-		byte[] bit=new byte[1010];
+		byte[] bit=new byte[55];
 		int now=0;
 		byte temp;
 		if(x==0) {//0的时候要特判一下
@@ -45,7 +45,7 @@ class MidiOutputParser{
 		return yy;
 	}
 	void writeFile(LinkedList<Measure> filee) {
-		final byte[] head= {0x4d,0x54,0x68,0x64,0x00,0x00,0x00,0x06,0x00,0x00,0x00,0x01,0x00,0x78,0x4d,0x54,0x72,0x6B};//文件头的头块
+		final byte[] head= {0x4d,0x54,0x68,0x64,0x00,0x00,0x00,0x06,0x00,0x00,0x00,0x01,0x07,0x80,0x4d,0x54,0x72,0x6B};//文件头的头块
 		Note[] temp=new Note[1000010];
 		int top,end,num;
 		try {
@@ -55,8 +55,8 @@ class MidiOutputParser{
 			num=0;
 			for(Measure str:filee){//扫描音符，并添加关音操作，并将start time转化为全局时间
 				for(Note value:str.notes) {
-					temp[++top]=new Note(num*(0x78*4)+value.startTime,value.duration,value.keyName,value.power,value.prevContinue);
-					temp[++top]=new Note(num*(0x78*4)+value.startTime+value.duration,0,value.keyName,0,value.prevContinue);
+					temp[++top]=new Note(num*(0x780*4)+value.startTime,value.duration,value.keyName,value.power,value.prevContinue);
+					temp[++top]=new Note(num*(0x780*4)+value.startTime+value.duration,0,value.keyName,0,value.prevContinue);
 				}
 				num++;
 			}
