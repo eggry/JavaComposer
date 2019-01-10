@@ -26,4 +26,4 @@
 .\testfiles\vocaloidOrSong\0026-¸æ°×.mid
 .\testfiles\vocaloidOrSong\0027-ÍýÏëË°.mid
 -1
-.\testfiles\pureVocaloid-
+.\testfiles\output\pureVocaloid-

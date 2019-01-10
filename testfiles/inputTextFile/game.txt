@@ -85,4 +85,4 @@
 .\testfiles\game\086.mid
 .\testfiles\game\087.mid
 -1
-.\testfiles\result\game-
+.\testfiles\output\game-

@@ -8,11 +8,11 @@ import java.util.TreeSet;
 
 
 public class MarkovChain {
-	private final int judgeEndExceedAveProbability=50;//有多大概率在超过平均值时暂停
-	private final int judgeEndMeetTailProbability=30;//有多大概率在碰到结尾的时候暂停
-	private final int judgeEndRandomStopProbability=1;//有多大概率没啥事儿就停
-	private final int selectOrignalHeadProbability=60;//有多大概率从原开头选开头
-	private final int selectRandomNextProbability=20;//有多大概率游走时随便找一个
+	private final int judgeEndExceedAveProbability=500;//有多大概率在超过平均值时暂停
+	private final int judgeEndMeetTailProbability=300;//有多大概率在碰到结尾的时候暂停
+	private final int judgeEndRandomStopProbability=5;//有多大概率没啥事儿就停
+	private final int selectOrignalHeadProbability=600;//有多大概率从原开头选开头
+	private final int selectRandomNextProbability=200;//有多大概率游走时随便找一个
 	private class Graph {//底层为邻接表
 		private class Edge{//边表（链表）结点
 			private int value;//边权（i->j转移了几次）
@@ -53,7 +53,7 @@ public class MarkovChain {
 					return selectHead();
 				}
 				if(judgeProbability(selectRandomNextProbability)) {
-					System.out.println("Choose random next");
+					System.out.print("Choose random next:");
 					return r.nextInt(nextId);//命中事件，随便找一个作为下一步
 				}
 				//否则，按链上概率选取
@@ -63,7 +63,7 @@ public class MarkovChain {
 					randNum-=now.value;
 					now=now.next;//没找到，就继续找
 				}//上面这段保证判断精确，我推过了
-				System.out.println("Choose ordered next from "+edgeCount+" node(s)");
+				System.out.print("Choose ordered next from "+edgeCount+" node(s):");
 				return now.nodeId;
 			}
 		}
@@ -114,7 +114,7 @@ public class MarkovChain {
 		this.seed = new Date().getTime();
 	}
 	private boolean judgeProbability(int probability) {//给定一个事件的发生概率，判断要不要发生，保证判断精确，我推过了
-		int randNum=r.nextInt(100);
+		int randNum=r.nextInt(1000);
 		return 0<=randNum&&randNum<probability;
 	}
 	public int getAverageLength() {
@@ -176,14 +176,15 @@ public class MarkovChain {
 	}
 	private int selectHead() {//找一个开头
 		if(headIds.size()==0) {
+			System.out.print("No head:");
 			return -1;//啥也没有，不用找了
 		}
 		System.out.print(result.size()+1+":\t");
 		if(judgeProbability(selectOrignalHeadProbability)) {
-			System.out.println("Choose original head");
+			System.out.print("Choose original head:");
 			return headIds.get(r.nextInt(headIds.size()));//命中，从开头列表选一个
 		}
-		System.out.println("Choose random head");
+		System.out.print("Choose random head:");
 		return r.nextInt(nextId);//否则，随便选一个当开头
 	}
 	private boolean judgeEnd(int id) {//给定现在的小节，决定要不要结束
@@ -208,9 +209,11 @@ public class MarkovChain {
 	}
 	public LinkedList<Measure> generate() {//随机游走生成新曲子
 		int nowId=selectHead();//先选一个起点
+		System.out.println(nowId);
 		while(!judgeEnd(nowId)) {//如果不结束就继续走
 			result.add(measures.get(nowId));//把这个加上
 			nowId=countMap.selectNext(nowId);//再从链里决定下一步走到哪儿
+			System.out.println(nowId);
 		}
 		if(nowId!=-1) {//如果不是因为无路可走，就把最后那个加上
 			result.add(measures.get(nowId));

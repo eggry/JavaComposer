@@ -39,4 +39,4 @@
 .\testfiles\vocaloidOrSong\2004-º£À«Ìì¿Õ.mid
 .\testfiles\vocaloidOrSong\2005-ÓðÈª ±¼ÅÜ.mid
 -1
-.\testfiles\vocaloidOrSong-
+.\testfiles\output\vocaloidOrSong-

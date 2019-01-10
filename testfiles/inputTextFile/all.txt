@@ -127,4 +127,4 @@
 .\testfiles\game\086.mid
 .\testfiles\game\087.mid
 -1
-.\testfiles\all-
+.\testfiles\output\all-

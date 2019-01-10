@@ -34,4 +34,4 @@
 .\testfiles\vocaloidOrSong\1007-深海少女.mid
 .\testfiles\vocaloidOrSong\1008-Ievan Polkka.mid
 -1
-.\testfiles\allVocaloid-
+.\testfiles\output\allVocaloid-
