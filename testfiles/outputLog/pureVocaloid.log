@@ -1,0 +1,63 @@
+Enter path of Midi File(-1 to stop):
+
+ReadOK!
+MarkovChain [UniqueMeasureCount=1284, ReceivedMeasureCount=3202, totalVoidMeasureCountInHeadAndTails=696, AverageLength=89, seed=1547148439985]
+Enter path of output Midi File:	[Your input]+"1547148439985.mid"
+1:	Choose random head:803
+2:	Choose random next:1106
+3:	Choose ordered next from 1 node(s):1107
+4:	Choose ordered next from 2 node(s):1108
+5:	Choose ordered next from 1 node(s):1109
+6:	Choose random next:313
+7:	Choose ordered next from 1 node(s):292
+8:	Choose ordered next from 3 node(s):295
+9:	Choose ordered next from 2 node(s):0
+10:	Choose random next:133
+11:	Choose ordered next from 2 node(s):136
+12:	Choose ordered next from 1 node(s):137
+13:	Choose ordered next from 1 node(s):138
+14:	Choose ordered next from 1 node(s):112
+15:	Choose ordered next from 2 node(s):113
+16:	Choose ordered next from 1 node(s):114
+17:	Choose ordered next from 1 node(s):115
+18:	Choose ordered next from 1 node(s):112
+19:	Choose random next:431
+20:	Choose random next:985
+21:	Choose ordered next from 1 node(s):986
+22:	Choose ordered next from 1 node(s):987
+23:	Choose ordered next from 1 node(s):988
+24:	Choose ordered next from 1 node(s):989
+25:	Choose ordered next from 1 node(s):990
+26:	Choose ordered next from 1 node(s):991
+27:	Choose random next:1055
+28:	Choose ordered next from 1 node(s):1056
+29:	Choose ordered next from 1 node(s):1057
+30:	Choose random next:833
+31:	Choose ordered next from 1 node(s):834
+32:	Choose ordered next from 1 node(s):835
+33:	Choose ordered next from 1 node(s):836
+34:	Choose ordered next from 1 node(s):837
+35:	Choose ordered next from 1 node(s):838
+36:	Choose ordered next from 2 node(s):846
+37:	Choose random next:1025
+38:	Choose ordered next from 1 node(s):1026
+39:	Choose ordered next from 1 node(s):1007
+40:	Choose ordered next from 9 node(s):1009
+41:	Choose ordered next from 1 node(s):1007
+42:	Choose ordered next from 9 node(s):1008
+43:	Choose ordered next from 1 node(s):1007
+44:	Choose ordered next from 9 node(s):1011
+45:	Choose ordered next from 1 node(s):0
+46:	Choose random next:892
+47:	Choose random next:526
+48:	Choose ordered next from 1 node(s):527
+49:	Choose ordered next from 1 node(s):528
+50:	Choose ordered next from 1 node(s):529
+51:	Choose ordered next from 1 node(s):530
+52:	Choose ordered next from 1 node(s):531
+53:	Choose random next:650
+Exit because meet tail
+
+GenerateOK!
+MeasureCnt:53
+write file OK!

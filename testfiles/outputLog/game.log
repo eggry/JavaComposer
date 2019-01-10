@@ -1,0 +1,20 @@
+Enter path of Midi File(-1 to stop):
+
+ReadOK!
+MarkovChain [UniqueMeasureCount=1788, ReceivedMeasureCount=2114, totalVoidMeasureCountInHeadAndTails=1, AverageLength=24, seed=1547148445222]
+Enter path of output Midi File:	[Your input]+"1547148445222.mid"
+1:	Choose random head:634
+2:	Choose ordered next from 1 node(s):635
+3:	Choose ordered next from 1 node(s):636
+4:	Choose ordered next from 1 node(s):637
+5:	Choose random next:116
+6:	Choose random next:778
+7:	Choose ordered next from 1 node(s):779
+8:	Choose ordered next from 1 node(s):780
+9:	Choose ordered next from 1 node(s):781
+10:	Choose ordered next from 1 node(s):782
+Exit because meet tail
+
+GenerateOK!
+MeasureCnt:10
+write file OK!

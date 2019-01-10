@@ -1,0 +1,101 @@
+Enter path of Midi File(-1 to stop):
+
+ReadOK!
+MarkovChain [UniqueMeasureCount=2228, ReceivedMeasureCount=4704, totalVoidMeasureCountInHeadAndTails=1028, AverageLength=89, seed=1547148443966]
+Enter path of output Midi File:	[Your input]+"1547148443966.mid"
+1:	Choose random head:1219
+2:	Choose random next:2077
+3:	Choose random next:321
+4:	Choose ordered next from 1 node(s):320
+5:	Choose random next:499
+6:	Choose ordered next from 1 node(s):500
+7:	Choose ordered next from 1 node(s):501
+8:	Choose ordered next from 1 node(s):502
+9:	Choose ordered next from 1 node(s):503
+10:	Choose ordered next from 1 node(s):504
+11:	Choose random next:1554
+12:	Choose ordered next from 1 node(s):1514
+13:	Choose random next:2194
+14:	Choose ordered next from 1 node(s):2195
+15:	Choose ordered next from 1 node(s):2196
+16:	Choose ordered next from 1 node(s):2197
+17:	Choose ordered next from 1 node(s):2198
+18:	Choose random next:184
+19:	Choose ordered next from 1 node(s):181
+20:	Choose ordered next from 2 node(s):182
+21:	Choose ordered next from 1 node(s):183
+22:	Choose random next:632
+23:	Choose ordered next from 1 node(s):633
+24:	Choose ordered next from 1 node(s):634
+25:	Choose ordered next from 2 node(s):635
+26:	Choose ordered next from 1 node(s):630
+27:	Choose ordered next from 2 node(s):631
+28:	Choose random next:1216
+29:	Choose ordered next from 1 node(s):1217
+30:	Choose ordered next from 1 node(s):1218
+31:	Choose ordered next from 1 node(s):1219
+32:	Choose ordered next from 1 node(s):1220
+33:	Choose random next:1484
+34:	Choose ordered next from 1 node(s):1485
+35:	Choose ordered next from 1 node(s):1486
+36:	Choose ordered next from 1 node(s):1487
+37:	Choose ordered next from 1 node(s):1488
+38:	Choose ordered next from 1 node(s):1489
+39:	Choose ordered next from 1 node(s):1490
+40:	Choose ordered next from 1 node(s):1491
+41:	Choose ordered next from 1 node(s):1492
+42:	Choose ordered next from 1 node(s):1493
+43:	Choose ordered next from 1 node(s):1494
+44:	Choose ordered next from 1 node(s):1495
+45:	Choose ordered next from 1 node(s):1496
+46:	Choose ordered next from 1 node(s):1497
+47:	Choose ordered next from 1 node(s):1498
+48:	Choose ordered next from 1 node(s):1499
+49:	Choose random next:1236
+50:	Choose ordered next from 1 node(s):1237
+51:	Choose ordered next from 2 node(s):1241
+52:	Choose ordered next from 1 node(s):1239
+53:	Choose random next:645
+54:	Choose ordered next from 1 node(s):646
+55:	Choose ordered next from 1 node(s):647
+56:	Choose random next:1524
+57:	Choose ordered next from 1 node(s):1522
+58:	Choose random next:407
+59:	Choose ordered next from 1 node(s):388
+60:	Choose ordered next from 2 node(s):408
+61:	Choose ordered next from 1 node(s):390
+62:	Choose ordered next from 1 node(s):391
+63:	Choose ordered next from 1 node(s):392
+64:	Choose ordered next from 2 node(s):393
+65:	Choose ordered next from 1 node(s):394
+66:	Choose ordered next from 1 node(s):395
+67:	Choose ordered next from 2 node(s):392
+68:	Choose ordered next from 2 node(s):393
+69:	Choose ordered next from 1 node(s):394
+70:	Choose random next:760
+71:	Choose ordered next from 1 node(s):761
+72:	Choose ordered next from 1 node(s):762
+73:	Choose ordered next from 1 node(s):763
+74:	Choose ordered next from 1 node(s):764
+75:	Choose ordered next from 3 node(s):795
+76:	Choose random next:894
+77:	Choose random next:1508
+78:	Choose random next:2206
+79:	Choose ordered next from 1 node(s):2207
+80:	Choose random next:1389
+81:	Choose ordered next from 1 node(s):1390
+82:	Choose ordered next from 1 node(s):1387
+83:	Choose random next:1479
+84:	Choose ordered next from 1 node(s):1480
+85:	Choose ordered next from 1 node(s):1481
+86:	Choose random next:2033
+87:	Choose ordered next from 1 node(s):2034
+88:	Meet an end, 88:	Choose random head:1193
+89:	Choose ordered next from 1 node(s):1194
+90:	Choose ordered next from 1 node(s):1195
+91:	Choose random next:2050
+Exit because outAve
+
+GenerateOK!
+MeasureCnt:91
+write file OK!

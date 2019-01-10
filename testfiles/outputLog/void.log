@@ -1,0 +1,11 @@
+Enter path of Midi File(-1 to stop):
+
+ReadOK!
+MarkovChain [UniqueMeasureCount=1, ReceivedMeasureCount=9, totalVoidMeasureCountInHeadAndTails=9, AverageLength=0, seed=1547148439777]
+Enter path of output Midi File:	[Your input]+"1547148439777.mid"
+No head:-1
+Exit because no measure in the Chain
+
+GenerateOK!
+MeasureCnt:0
+write file OK!
