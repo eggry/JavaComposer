@@ -12,17 +12,26 @@ public class MidiInputParser {
 	int ticksPerQuarterNote;//一个四分音符几个tick
 	int ticksPerMeasure;//一个小节几个tick
 	final static int minNote=23;//C2的do，比这个音低的都忽略
-	final static int maxNote=71;//C4的si，比这个高的音都忽略
+	final static int maxNote=83;//C5的si，比这个高的音都忽略
 	final static int minPower=30;//小于这个声音的都认为是静音
+	int maxDuartion;//比这个长的音都不要了
 	LinkedList<Measure> parseResult=new LinkedList<Measure>();//分好小节的解析结果
+	Measure nowMeasure;
+	int nowTime=0;//现在tick数
+	int[] notesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子头开始计算！），目前没有的用-1
+	int[] notesPower= new int [256];//记录每个音符的力度，目前没有的用0
+	
 	public MidiInputParser(DataInputStream file){//拿一个输入流构造解析器
 		this.file=file;
 	}
-	void prase() throws IOException, MidiFormatError {//解析
+	
+	LinkedList<Measure> prase() throws IOException, MidiFormatError {//解析
 		while(file.available()>0) {//有块就解析
 			parseTrunk();
 		}
+		return parseResult;
 	}
+	
 	private void parseTrunk() throws IOException, MidiFormatError {
 		final byte[] headMark= {0x4d,0x54,0x68,0x64};//头块的头
 		final byte[] trackMark={0x4d,0x54,0x72,0x6B};//内容块的头
@@ -43,6 +52,7 @@ public class MidiInputParser {
 			}
 		}
 	}
+	
 	void parseHead(int length) throws IOException, MidiFormatError {//文件头解析
 		if(length<6) {//头文件长度不够，退出
 			file.skip(length);
@@ -53,6 +63,7 @@ public class MidiInputParser {
 		int trackCount=file.readUnsignedShort();//几个音轨，应该是1
 		this.ticksPerQuarterNote=file.readUnsignedShort();//一个四分音符几个tick
 		this.ticksPerMeasure=4*ticksPerQuarterNote;//计算一个小节几个tick，未指定时默认4/4拍，即一小节是四个四分音符
+		this.maxDuartion=this.ticksPerMeasure;
 		file.skip(length-6);//跳过剩余头部
 		//判断是不是不支持的格式
 		if(format!=0) {//必须是0格式
@@ -65,6 +76,7 @@ public class MidiInputParser {
 			throw new MidiFormatError("division fromat must be ticks");
 		}
 	}
+	
 	void parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
 		if(!ds.markSupported()) {//输入流必须支持mark
 			throw new IllegalArgumentException("DataInputStream must be buffered!");
@@ -73,24 +85,17 @@ public class MidiInputParser {
 		//第一个：[0,N-1]
 		//第二个：[N,2N-1]
 		//...
-		Measure nowMeasure= new Measure();//现在正在解析的小节
-		int nowTime=0;//现在tick数
-		int[] NotesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子头开始计算！），目前没有的用-1
-		int[] NotesPower= new int [256];//记录每个音符的力度，目前没有的用0
-		Arrays.fill(NotesStartTime, -1);//一开始都没有
+		nowMeasure= new Measure();//现在正在解析的小节
+		
+		Arrays.fill(notesStartTime, -1);//一开始都没有
 		int eventCode=0;//事件编号
 		while(ds.available()>0) {//有就一直读
 			int deltaTime=getDeltaTime(ds);//解析deltaTime
 			nowTime+=deltaTime;//更新现在时间
 			while(nowTime>=ticksPerMeasure*(parseResult.size()+1)) {//如果时间超过上一个小节，生成新小节
-				for(int i=minNote;i<=maxNote;i++) {//把没结束的写到这个小节里
-					if(NotesStartTime[i]!=-1) {
-						int startTime = Math.max(0, NotesStartTime[i]-ticksPerMeasure*parseResult.size());//本小节中的
-						int duration = ticksPerMeasure-startTime;
-						boolean prevContinue = NotesStartTime[i]<ticksPerMeasure*parseResult.size();
-						if(duration != 0) {
-							nowMeasure.addNote(new Note(startTime, duration, i, NotesPower[i], prevContinue));
-						}
+				for(int i=Math.max(minNote,0);i<=Math.min(maxNote,255);i++) {//把没结束的写到这个小节里
+					if(notesStartTime[i]!=-1) {
+						writeNoteToMeasure(ticksPerMeasure*(parseResult.size()+1),i);
 					}
 				}
 				parseResult.add(nowMeasure);//添加新小节
@@ -105,42 +110,13 @@ public class MidiInputParser {
 			case 0x8:{
 				int note=ds.readUnsignedByte();
 				ds.skipBytes(1);
-				int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
-				int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
-				boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-				if(duration != 0) {
-					nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
-				}
-				NotesStartTime[note]=-1;
-				NotesPower[note]=0;
+				noteChange(nowTime,note,0);
 				break;
 			}
 			case 0x9:{
 				int note=ds.readUnsignedByte();
 				int power=ds.readUnsignedByte();
-				if(note<minNote||note>maxNote) {
-					break;//太小的直接忽略
-				}
-				if(power<minPower&&NotesStartTime[note]!=-1) {//之前已经按下，此次力度太小，认为按键抬起，写入。
-					int startTime = Math.max(0, NotesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
-					int duration = nowTime-ticksPerMeasure*parseResult.size()-startTime;
-					boolean prevContinue = NotesStartTime[note]<ticksPerMeasure*parseResult.size();
-					if(duration != 0) {
-						nowMeasure.addNote(new Note(startTime, duration, note, NotesPower[note], prevContinue));
-					}
-					NotesStartTime[note]=-1;
-					NotesPower[note]=0;
-					break;
-				}
-				if(power<minPower) {//力度太小直接忽略
-					break;
-				}
-				if(NotesStartTime[note]==-1) {
-					NotesStartTime[note]=nowTime;
-				}else {
-					//System.out.println("wow:Key"+note+"prev:"+NotesPower[note]+"now"+power);//同一个音符不松开就改力度
-				}
-				NotesPower[note]=power;
+				noteChange(nowTime,note,power);
 				break;
 			}
 			case 0xA:{
@@ -166,14 +142,12 @@ public class MidiInputParser {
 			case 0xF:{
 				switch (eventCode&0xf) {
 				case 0xF:{
-					int type=ds.readUnsignedByte();
-					int len=ds.readUnsignedByte();
+					int type=ds.readUnsignedByte();//事件类型
+					int len=ds.readUnsignedByte();//内容长度
 					byte[] buf=new byte[len];
 					ds.read(buf);
 					switch (type) {
-					// TODO 还有转换小节的事件
 					case 0x2f:{
-						//System.out.println("ok!");
 						if(nowMeasure.noteCount()!=0) {
 							parseResult.add(nowMeasure);//添加新小节
 						}
@@ -194,7 +168,34 @@ public class MidiInputParser {
 			parseResult.add(nowMeasure);//添加新小节
 		}
 	}
+	private void noteChange(int nowTime,int note,int power) {
+		if(note<minNote||note>maxNote) {
+			return ;//小于音域的直接干掉
+		}
+		if(power<=0||power<minPower) {
+			if(notesPower[note]>=minPower) {
+				writeNoteToMeasure(nowTime,note);
+				notesStartTime[note]=-1;
+				notesPower[note]=0;	
+			}
+		}else {
+			if(notesStartTime[note]!=-1) {
+				writeNoteToMeasure(nowTime,note);
+			}
+			notesStartTime[note]=nowTime;
+			notesPower[note]=power;	
+		}
+	}
 	
+	private void writeNoteToMeasure(int endTime,int note) {
+		int startTime = Math.max(0, notesStartTime[note]-ticksPerMeasure*parseResult.size());//本小节中的
+		int duration = endTime-ticksPerMeasure*parseResult.size()-startTime;
+		boolean prevContinue = notesStartTime[note]<ticksPerMeasure*parseResult.size();
+		if(duration != 0 && endTime-notesStartTime[note]<=maxDuartion) {
+			final int convertToStandard=960/this.ticksPerQuarterNote;
+			nowMeasure.addNote(new Note(convertToStandard*startTime, convertToStandard*duration, note, notesPower[note], prevContinue));
+		}
+	}
 	static int getDeltaTime(DataInputStream ds) throws IOException {//解析变长数->int
 		int ret=0;
 		int temp=0;

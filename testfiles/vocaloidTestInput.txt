@@ -1,0 +1,32 @@
+.\testfiles\vocaloid\0001-DECO＊27,初音ミク - 初嵐.mid
+.\testfiles\vocaloid\0002-DMYoung,22&33 - 「双眼」.mid
+.\testfiles\vocaloid\0003-【2017拜年祭单品】万神纪【星尘原创曲】.mid
+.\testfiles\vocaloid\0004-与你同行.mid
+.\testfiles\vocaloid\0005-乐正绫 - Scarlet Drop.mid
+.\testfiles\vocaloid\0006-乐正绫 - 梦语.mid
+.\testfiles\vocaloid\0007-乐正绫,洛天依-世末歌者.mid
+.\testfiles\vocaloid\0008-初梦 - 初音ミク,MusikM.mid
+.\testfiles\vocaloid\0009-前前前世(movie ver.).mid
+.\testfiles\vocaloid\0010-妄想感伤代偿联盟(MikuCHN).mid
+.\testfiles\vocaloid\0011-心华 - 神的女儿们.mid
+.\testfiles\vocaloid\0012-心华 乐正绫 洛天依 言和 砖厂浪人 - 镜花水月_No Chorus.mid
+.\testfiles\vocaloid\0013-悟空.mid
+.\testfiles\vocaloid\0014-星尘 - 涟漪.mid
+.\testfiles\vocaloid\0015-洛天依 - CONNECT.mid
+.\testfiles\vocaloid\0016-洛天依 - I Love U.mid
+.\testfiles\vocaloid\0017-洛天依 - 夏日的纪念.mid
+.\testfiles\vocaloid\0018-洛天依 - 歌姬什么的 不干了啦! (MV版).mid
+.\testfiles\vocaloid\0019-深海少女.mid
+.\testfiles\vocaloid\0020-燕子-天依.mid
+.\testfiles\vocaloid\0021-祈inory - 月·西江.mid
+.\testfiles\vocaloid\0022-达拉崩吧.mid
+.\testfiles\vocaloid\0023-鱼玄机 - 兔裹煎蛋卷.mid
+.\testfiles\vocaloid\1001-magnet.mid
+.\testfiles\vocaloid\1002-みくみくにしてあげる.mid
+.\testfiles\vocaloid\1003-ワールドイズマイン.mid
+.\testfiles\vocaloid\1004-千本桜.mid
+.\testfiles\vocaloid\1005-夢と葉桜.mid
+.\testfiles\vocaloid\1006-朧月.mid
+.\testfiles\vocaloid\1007-深海少女.mid
+-1
+.\testfiles\result\vocaloid-

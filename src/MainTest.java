@@ -13,13 +13,13 @@ class MainTest {
 	void test() {
 		Scanner in=new Scanner(System.in);
 		System.out.println("Enter path of Midi File:(-1 to stop)");
-		MarkovChain mc=new MarkovChain();
+		//MarkovChain mc=new MarkovChain();
 		String inputStr;
 		while(in.hasNextLine()&&!(inputStr=in.nextLine().trim()).equals("-1")) {
 			try {
 				MidiInputParser mip=new MidiInputParser(new DataInputStream(new FileInputStream(inputStr)));
 				mip.prase();
-				mc.addList(mip.parseResult);
+				System.out.println(mip.parseResult);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				System.err.println("Can't find file:"+inputStr);
@@ -32,10 +32,10 @@ class MainTest {
 
 		}
 		in.close();
-		System.out.println("totalCount:"+mc.totalMeasureCount+"uniqueCount:"+mc.uniqueMeasureCount()+"Ave:"+mc.totalMeasureCount/mc.totalListCount);
-		mc.generate();
-		System.out.println(mc.result);
-		System.out.println("MeasureCnt:"+mc.result.size());
+//		System.out.println("totalCount:"+mc.totalMeasureCount+"uniqueCount:"+mc.uniqueMeasureCount()+"Ave:"+mc.totalMeasureCount/mc.totalListCount);
+//		mc.generate();
+//		System.out.println(mc.result);
+//		System.out.println("MeasureCnt:"+mc.result.size());
 	}
 
 }

@@ -1,10 +1,12 @@
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 //import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -17,38 +19,40 @@ public class Main {
 		String inputStr;
 		while(in.hasNextLine()&&!(inputStr=in.nextLine().trim()).equals("-1")) {
 			try {
-				MidiInputParser mip=new MidiInputParser(new DataInputStream(new FileInputStream(inputStr)));
-				mip.prase();
-				mc.addList(mip.parseResult);
+				DataInputStream dis=new DataInputStream(new FileInputStream(inputStr));
+				try {
+					MidiInputParser mip=new MidiInputParser(dis);
+					mc.addList(mip.prase());
+				}
+				catch (MidiFormatError e) {
+					System.err.println("File format Err:"+inputStr);
+					e.printStackTrace();
+				}
+				dis.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				System.err.println("Can't find file:"+inputStr);
+				System.err.println("Can't read file:"+inputStr);
 				e.printStackTrace();
-			} catch (MidiFormatError e) {
-				// TODO Auto-generated catch block
-				System.err.println("File format Err:"+inputStr);
-				e.printStackTrace();
-			}
-
+			} 
 		}
-		System.out.println("totalCount:"+mc.totalMeasureCount+"uniqueCount:"+mc.uniqueMeasureCount()+"Ave:"+mc.totalMeasureCount/mc.totalListCount);
-		mc.generate();
-		System.out.println(mc.result);
-		System.out.println("MeasureCnt:"+mc.result.size());
-		
-		System.out.println("Enter path of output Midi File:");
+		System.out.println("ReadOK!\n"+mc);
+		String filename=mc.getSeed()+".mid";
+		System.out.println("Enter path of output Midi File:\t[Your input]+\""+filename+"\"");
 		try {
-			DataOutputStream dos=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(in.nextLine().trim())));
+			inputStr=in.nextLine().trim();
+			File file=new File(inputStr+filename);
+			file.getParentFile().mkdirs();
+			file.createNewFile();
+			DataOutputStream dos=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
+			LinkedList<Measure> result=mc.generate();
+			System.out.println("GenerateOK! MeasureCnt:"+result.size());
 			MidiOutputParser mop=new MidiOutputParser(dos);
-			mop.writeFile(mc.result);
+			mop.writeFile(result);
 			dos.close();
-			System.out.println("writeOK");
+			System.out.println("write file OK!");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.err.println("Can't write file:");
 			e.printStackTrace();
 		}
 		in.close();
-
 	}
 }
