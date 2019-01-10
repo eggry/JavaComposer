@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException, MidiFormatError {
 		Scanner in=new Scanner(System.in);
-		System.out.println("Enter path of Midi File:(-1 to stop)");
+		System.out.println("Enter path of Midi File(-1 to stop):");
 		MarkovChain mc=new MarkovChain();
 		String inputStr;
 		while(in.hasNextLine()&&!(inputStr=in.nextLine().trim()).equals("-1")) {
@@ -34,7 +34,9 @@ public class Main {
 				e.printStackTrace();
 			} 
 		}
-		System.out.println("ReadOK!\n"+mc);
+		System.out.println();
+		System.out.println("ReadOK!");
+		System.out.println(mc);
 		String filename=mc.getSeed()+".mid";
 		System.out.println("Enter path of output Midi File:\t[Your input]+\""+filename+"\"");
 		try {
@@ -44,7 +46,9 @@ public class Main {
 			file.createNewFile();
 			DataOutputStream dos=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
 			LinkedList<Measure> result=mc.generate();
-			System.out.println("GenerateOK! MeasureCnt:"+result.size());
+			System.out.println();
+			System.out.println("GenerateOK!");
+			System.out.println("MeasureCnt:"+result.size());
 			MidiOutputParser mop=new MidiOutputParser(dos);
 			mop.writeFile(result);
 			dos.close();

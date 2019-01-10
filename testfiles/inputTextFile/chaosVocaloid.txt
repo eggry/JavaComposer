@@ -1,0 +1,10 @@
+.\testfiles\vocaloidOrSong\1001-magnet.mid
+.\testfiles\vocaloidOrSong\1002-みくみくにしてあげる.mid
+.\testfiles\vocaloidOrSong\1003-ワールドイズマイン.mid
+.\testfiles\vocaloidOrSong\1004-千本桜.mid
+.\testfiles\vocaloidOrSong\1005-夢と葉桜.mid
+.\testfiles\vocaloidOrSong\1006-朧月.mid
+.\testfiles\vocaloidOrSong\1007-深海少女.mid
+.\testfiles\vocaloidOrSong\1008-Ievan Polkka.mid
+-1
+.\testfiles\chaosVocaloid-

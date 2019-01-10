@@ -1,0 +1,29 @@
+.\testfiles\vocaloidOrSong\0001-DECO＊27,初音ミク - 初嵐.mid
+.\testfiles\vocaloidOrSong\0002-DMYoung,22&33 - 「双眼」.mid
+.\testfiles\vocaloidOrSong\0003-【2017拜年祭单品】万神纪【星尘原创曲】.mid
+.\testfiles\vocaloidOrSong\0004-与你同行.mid
+.\testfiles\vocaloidOrSong\0005-乐正绫 - Scarlet Drop.mid
+.\testfiles\vocaloidOrSong\0006-乐正绫 - 梦语.mid
+.\testfiles\vocaloidOrSong\0007-乐正绫,洛天依-世末歌者.mid
+.\testfiles\vocaloidOrSong\0008-初梦 - 初音ミク,MusikM.mid
+.\testfiles\vocaloidOrSong\0009-前前前世(movie ver.).mid
+.\testfiles\vocaloidOrSong\0010-妄想感伤代偿联盟(MikuCHN).mid
+.\testfiles\vocaloidOrSong\0011-心华 - 神的女儿们.mid
+.\testfiles\vocaloidOrSong\0012-心华 乐正绫 洛天依 言和 砖厂浪人 - 镜花水月_No Chorus.mid
+.\testfiles\vocaloidOrSong\0013-悟空.mid
+.\testfiles\vocaloidOrSong\0014-星尘 - 涟漪.mid
+.\testfiles\vocaloidOrSong\0015-洛天依 - CONNECT.mid
+.\testfiles\vocaloidOrSong\0016-洛天依 - I Love U.mid
+.\testfiles\vocaloidOrSong\0017-洛天依 - 夏日的纪念.mid
+.\testfiles\vocaloidOrSong\0018-洛天依 - 歌姬什么的 不干了啦! (MV版).mid
+.\testfiles\vocaloidOrSong\0019-深海少女.mid
+.\testfiles\vocaloidOrSong\0020-燕子-天依.mid
+.\testfiles\vocaloidOrSong\0021-祈inory - 月·西江.mid
+.\testfiles\vocaloidOrSong\0022-达拉崩吧.mid
+.\testfiles\vocaloidOrSong\0023-鱼玄机 - 兔裹煎蛋卷.mid
+.\testfiles\vocaloidOrSong\0024-你好-bpm140.mid
+.\testfiles\vocaloidOrSong\0025-星之奇迹.mid
+.\testfiles\vocaloidOrSong\0026-告白.mid
+.\testfiles\vocaloidOrSong\0027-妄想税.mid
+-1
+.\testfiles\pureVocaloid-

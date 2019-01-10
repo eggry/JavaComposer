@@ -4,35 +4,36 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 
 public class MarkovChain {
-	final int judgeEndExceedAveProbability=50;//有多大概率在超过平均值时暂停
-	final int judgeEndMeetTailProbability=30;//有多大概率在碰到结尾的时候暂停
-	final int judgeEndRandomStopProbability=1;//有多大概率没啥事儿就停
-	final int selectOrignalHeadProbability=60;//有多大概率从原开头选开头
-	final int selectRandomNextProbability=20;//有多大概率游走时随便找一个
-	public class Graph {//底层为邻接表
-		class Edge{//边表（链表）结点
-			int value;//边权（i->j转移了几次）
-			int nodeId;//边指向几号结点
-			Edge next;//下一个结点
+	private final int judgeEndExceedAveProbability=50;//有多大概率在超过平均值时暂停
+	private final int judgeEndMeetTailProbability=30;//有多大概率在碰到结尾的时候暂停
+	private final int judgeEndRandomStopProbability=1;//有多大概率没啥事儿就停
+	private final int selectOrignalHeadProbability=60;//有多大概率从原开头选开头
+	private final int selectRandomNextProbability=20;//有多大概率游走时随便找一个
+	private class Graph {//底层为邻接表
+		private class Edge{//边表（链表）结点
+			private int value;//边权（i->j转移了几次）
+			private int nodeId;//边指向几号结点
+			private Edge next;//下一个结点
 			public Edge(int value, int nodeId, Edge next) {
 				this.value = value;
 				this.nodeId = nodeId;
 				this.next = next;
 			}
 		}
-		class Node{//结点，记录边表头以及出边的权值的和
-			Edge head;//边表的头
-			int totVal;//出边权值和
-			int edgeCount;
+		private class Node{//结点，记录边表头以及出边的权值的和
+			private Edge head;//边表的头
+			private int totVal;//出边权值和
+			private int edgeCount;
 			public Node() {
 				this.head = null;
 				this.totVal = 0;
 				this.edgeCount = 0;
 			}
-			void addEdge(int to){
+			private void addEdge(int to){
 				Edge now = head;//从head开始遍历，找是否已经有from->to的边
 				while(now!=null&&now.nodeId!=to) {
 					now=now.next;//没找到，下面还有，就继续找
@@ -45,7 +46,7 @@ public class MarkovChain {
 				}
 				totVal++;//别忘了更新结点上的信息
 			}
-			int selectNext() {
+			private int selectNext() {
 				System.out.print(result.size()+1+":\t");
 				if(edgeCount==0) {//没出度，直接从“头”开始
 					System.out.print("Meet an end, ");
@@ -66,7 +67,7 @@ public class MarkovChain {
 				return now.nodeId;
 			}
 		}
-		ArrayList<Node> nodes;//结点集合，结点从0编号
+		private ArrayList<Node> nodes;//结点集合，结点从0编号
 		
 		public Graph() {
 			nodes=new ArrayList<Node>();
@@ -84,23 +85,23 @@ public class MarkovChain {
 	
 	
 	
-	Graph countMap;//马尔可夫链
+	private Graph countMap;//马尔可夫链
 	
-	TreeMap<Measure,Integer> idAllocator;//离散化用，Measure->ID
-	ArrayList<Measure> measures;//离散化用，ID->Measure
-	int nextId;//离散化用，编号，从0开始
+	private TreeMap<Measure,Integer> idAllocator;//离散化用，Measure->ID
+	private ArrayList<Measure> measures;//离散化用，ID->Measure
+	private int nextId;//离散化用，编号，从0开始
 	
-	int totalMeasureCount;//一共处理了多少小节（统计用变量）
-	int totalListCount;//一共处理了多少个音乐（统计用变量）
-	int totalVoidMeasureCount;
+	private int totalMeasureCount;//一共处理了多少小节（统计用变量）
+	private int totalListCount;//一共处理了多少个音乐（统计用变量）
+	private int totalVoidMeasureCount;
 	
-	ArrayList<Integer> headIds;//哪几个是开头
-	ArrayList<Integer> tailIds;//哪几个是结尾
+	private ArrayList<Integer> headIds;//哪几个是开头
+	private TreeSet<Integer> tailIds;//哪几个是结尾
 	
-	LinkedList<Measure> result;//游走结果
+	private LinkedList<Measure> result;//游走结果
 	
-	Random r;
-	long seed;
+	private Random r;
+	private long seed;
 	
 	public long getSeed() {
 		return seed;
@@ -112,12 +113,12 @@ public class MarkovChain {
 	public void setSeed() {
 		this.seed = new Date().getTime();
 	}
-	boolean judgeProbability(int probability) {//给定一个事件的发生概率，判断要不要发生，保证判断精确，我推过了
+	private boolean judgeProbability(int probability) {//给定一个事件的发生概率，判断要不要发生，保证判断精确，我推过了
 		int randNum=r.nextInt(100);
 		return 0<=randNum&&randNum<probability;
 	}
-	int getAverageLength() {
-		return (totalMeasureCount-totalVoidMeasureCount)/totalListCount;
+	public int getAverageLength() {
+		return (totalMeasureCount-totalVoidMeasureCount)/(totalListCount+1);
 	}
 	public MarkovChain() {//初始化
 		countMap=new Graph();
@@ -128,7 +129,7 @@ public class MarkovChain {
 		totalListCount=0;
 		totalVoidMeasureCount=0;
 		headIds=new ArrayList<Integer>();
-		tailIds=new ArrayList<Integer>();
+		tailIds=new TreeSet<Integer>();
 		result=new LinkedList<Measure>();
 		seed=new Date().getTime();
 		r=new Random(seed);
@@ -173,7 +174,7 @@ public class MarkovChain {
 		}
 		tailIds.add(prevNode);//记录结尾
 	}
-	int selectHead() {//找一个开头
+	private int selectHead() {//找一个开头
 		if(headIds.size()==0) {
 			return -1;//啥也没有，不用找了
 		}
@@ -185,7 +186,7 @@ public class MarkovChain {
 		System.out.println("Choose random head");
 		return r.nextInt(nextId);//否则，随便选一个当开头
 	}
-	boolean judgeEnd(int id) {//给定现在的小节，决定要不要结束
+	private boolean judgeEnd(int id) {//给定现在的小节，决定要不要结束
 		if(id==-1) {//如果都越界了，肯定结束
 			System.out.println("Exit because no measure in the Chain");
 			return true;

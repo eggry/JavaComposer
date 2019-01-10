@@ -8,24 +8,24 @@ import java.util.LinkedList;
 
 
 public class MidiInputParser {
-	DataInputStream file;//数据输入流
-	int ticksPerQuarterNote;//一个四分音符几个tick
-	int ticksPerMeasure;//一个小节几个tick
-	final static int minNote=23;//C2的do，比这个音低的都忽略
-	final static int maxNote=83;//C5的si，比这个高的音都忽略
-	final static int minPower=30;//小于这个声音的都认为是静音
-	int maxDuartion;//比这个长的音都不要了
-	LinkedList<Measure> parseResult=new LinkedList<Measure>();//分好小节的解析结果
-	Measure nowMeasure;
-	int nowTime=0;//现在tick数
-	int[] notesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子头开始计算！），目前没有的用-1
-	int[] notesPower= new int [256];//记录每个音符的力度，目前没有的用0
+	private DataInputStream file;//数据输入流
+	private int ticksPerQuarterNote;//一个四分音符几个tick
+	private int ticksPerMeasure;//一个小节几个tick
+	private final static int minNote=23;//C2的do，比这个音低的都忽略
+	private final static int maxNote=83;//C5的si，比这个高的音都忽略
+	private final static int minPower=30;//小于这个声音的都认为是静音
+	private int maxDuartion;//比这个长的音都不要了
+	private LinkedList<Measure> parseResult=new LinkedList<Measure>();//分好小节的解析结果
+	private Measure nowMeasure;
+	private int nowTime=0;//现在tick数
+	private int[] notesStartTime= new int [256];//记录每个音符的起始时间（起点从曲子头开始计算！），目前没有的用-1
+	private int[] notesPower= new int [256];//记录每个音符的力度，目前没有的用0
 	
 	public MidiInputParser(DataInputStream file){//拿一个输入流构造解析器
 		this.file=file;
 	}
 	
-	LinkedList<Measure> prase() throws IOException, MidiFormatError {//解析
+	public LinkedList<Measure> prase() throws IOException, MidiFormatError {//解析
 		while(file.available()>0) {//有块就解析
 			parseTrunk();
 		}
@@ -53,7 +53,7 @@ public class MidiInputParser {
 		}
 	}
 	
-	void parseHead(int length) throws IOException, MidiFormatError {//文件头解析
+	private void parseHead(int length) throws IOException, MidiFormatError {//文件头解析
 		if(length<6) {//头文件长度不够，退出
 			file.skip(length);
 			throw new MidiFormatError("Head too short");
@@ -77,7 +77,7 @@ public class MidiInputParser {
 		}
 	}
 	
-	void parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
+	private void parseTrack(DataInputStream ds) throws IOException, MidiFormatError {//轨道解析
 		if(!ds.markSupported()) {//输入流必须支持mark
 			throw new IllegalArgumentException("DataInputStream must be buffered!");
 		}
@@ -196,7 +196,7 @@ public class MidiInputParser {
 			nowMeasure.addNote(new Note(convertToStandard*startTime, convertToStandard*duration, note, notesPower[note], prevContinue));
 		}
 	}
-	static int getDeltaTime(DataInputStream ds) throws IOException {//解析变长数->int
+	private static int getDeltaTime(DataInputStream ds) throws IOException {//解析变长数->int
 		int ret=0;
 		int temp=0;
 		while(((temp=ds.readUnsignedByte())&0x80)==0x80) {//高位是1，继续

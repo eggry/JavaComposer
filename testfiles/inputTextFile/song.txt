@@ -1,0 +1,7 @@
+.\testfiles\vocaloidOrSong\2001-Heal the World-Michael Jackson.mid
+.\testfiles\vocaloidOrSong\2002-Hey Judy 甲壳虫乐队.mid
+.\testfiles\vocaloidOrSong\2003-邓丽君 我只在乎你.mid
+.\testfiles\vocaloidOrSong\2004-海阔天空.mid
+.\testfiles\vocaloidOrSong\2005-羽泉 奔跑.mid
+-1
+.\testfiles\song-

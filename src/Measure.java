@@ -1,8 +1,7 @@
-import java.util.Set;
 import java.util.TreeSet;
 
 public class Measure implements Comparable<Measure>{
-	Set<Note> notes;
+	TreeSet<Note> notes;
 	public Measure() {
 		notes=new TreeSet<Note>();
 	}
@@ -14,16 +13,18 @@ public class Measure implements Comparable<Measure>{
 	}
 
 	@Override
-	public boolean equals(Object obj) {//Í¬ÉÏ
+	public boolean equals(Object obj) {//�򵥴ֱ�
 		return this.toString()==obj.toString();
 	}
 	@Override
 	public String toString() {
-		String ret="Measure:\n";
+		StringBuffer s=new StringBuffer("Measure:\n");
 		for(Note n:notes) {
-			ret+='\t'+n.toString()+'\n';
+			s.append('\t');
+			s.append(n);
+			s.append('\n');
 		}
-		return ret;
+		return s.toString();
 	}
 	@Override
 	public int compareTo(Measure arg0) {

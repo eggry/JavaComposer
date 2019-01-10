@@ -1,0 +1,4 @@
+.\testfiles\void\void.mid
+.\testfiles\void\longVoid.mid
+-1
+.\testfiles\void-
