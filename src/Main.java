@@ -20,7 +20,10 @@ public class Main {
 		while(in.hasNextLine()&&!(inputStr=in.nextLine().trim()).equals("-1")) {
 			try {
 				if(inputStr.length()>=2&&inputStr.charAt(0)=='"'&&inputStr.charAt(inputStr.length()-1)=='"') {
-					inputStr=inputStr.substring(1, inputStr.length()-1);
+					inputStr=inputStr.substring(1, inputStr.length()-1).trim();
+				}
+				if(inputStr.length()==0) {
+					continue;
 				}
 				DataInputStream dis=new DataInputStream(new FileInputStream(inputStr));
 				try {
@@ -45,9 +48,9 @@ public class Main {
 		try {
 			inputStr=in.nextLine().trim();
 			if(inputStr.length()>=2&&inputStr.charAt(0)=='"'&&inputStr.charAt(inputStr.length()-1)=='"') {
-				inputStr=inputStr.substring(1, inputStr.length()-1);
+				inputStr=inputStr.substring(1, inputStr.length()-1).trim();
 			}
-			if(inputStr.equals("")) {
+			if(inputStr.length()==0) {
 				inputStr=".\\";
 			}
 			File file=new File(inputStr+filename);

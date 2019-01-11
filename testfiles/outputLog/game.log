@@ -1,39 +1,27 @@
 Enter path of Midi File(-1 to stop):
 
 ReadOK!
-MarkovChain [UniqueMeasureCount=1788, ReceivedMeasureCount=2114, totalVoidMeasureCountInHeadAndTails=1, AverageLength=24, seed=1547182910333]
-Enter path of output Midi File:	[Your input]+"1547182910333.mid"
-Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\game-1547182910333.mid
-1:	Choose random head:1038
-2:	Choose random next:678
-3:	Choose ordered next from 1 node(s):679
-4:	Choose ordered next from 1 node(s):680
-5:	Choose ordered next from 1 node(s):681
-6:	Choose ordered next from 1 node(s):682
-7:	Choose ordered next from 1 node(s):675
-8:	Choose ordered next from 1 node(s):676
-9:	Choose ordered next from 1 node(s):677
-10:	Choose ordered next from 1 node(s):678
-11:	Choose ordered next from 1 node(s):679
-12:	Choose ordered next from 1 node(s):680
-13:	Choose ordered next from 1 node(s):681
-14:	Choose random next:1406
-15:	Choose ordered next from 1 node(s):1407
-16:	Choose ordered next from 1 node(s):1408
-17:	Choose ordered next from 1 node(s):1409
-18:	Choose ordered next from 1 node(s):1410
-19:	Choose ordered next from 1 node(s):1411
-20:	Choose ordered next from 1 node(s):1412
-21:	Choose ordered next from 1 node(s):1413
-22:	Choose random next:176
-23:	Choose ordered next from 1 node(s):177
-24:	Choose ordered next from 2 node(s):180
-25:	Choose ordered next from 1 node(s):181
-26:	Choose ordered next from 2 node(s):182
-27:	Choose ordered next from 1 node(s):183
-28:	Choose ordered next from 1 node(s):184
-Exit because outAve
+MarkovChain [UniqueMeasureCount=1788, ReceivedMeasureCount=2114, totalVoidMeasureCountInHeadAndTails=1, AverageLength=24, seed=1547186898404]
+Enter path of output Midi File:	[Your input]+"1547186898404.mid"
+Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\game-1547186898404.mid
+1:	Choose random head:1210
+2:	Choose ordered next from 1 node(s):1211
+3:	Choose ordered next from 1 node(s):1212
+4:	Choose random next:1280
+5:	Choose ordered next from 1 node(s):1281
+6:	Choose ordered next from 1 node(s):1282
+7:	Choose ordered next from 1 node(s):1283
+8:	Choose ordered next from 1 node(s):1284
+9:	Choose ordered next from 1 node(s):1285
+10:	Choose ordered next from 1 node(s):1286
+11:	Choose ordered next from 1 node(s):1287
+12:	Choose ordered next from 1 node(s):1288
+13:	Choose ordered next from 1 node(s):1289
+14:	Meet an end, 14:	Choose random head:680
+15:	Choose random next:1786
+16:	Choose ordered next from 1 node(s):1787
+Exit because meet tail
 
 GenerateOK!
-MeasureCnt:28
+MeasureCnt:16
 write file OK!
