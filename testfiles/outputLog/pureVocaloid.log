@@ -1,59 +1,53 @@
 Enter path of Midi File(-1 to stop):
 
 ReadOK!
-MarkovChain [UniqueMeasureCount=1284, ReceivedMeasureCount=3202, totalVoidMeasureCountInHeadAndTails=696, AverageLength=89, seed=1547186893172]
-Enter path of output Midi File:	[Your input]+"1547186893172.mid"
-Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\pureVocaloid-1547186893172.mid
-1:	Choose random head:558
-2:	Choose random next:1159
-3:	Choose random next:810
-4:	Choose ordered next from 1 node(s):803
-5:	Choose random next:1162
-6:	Choose random next:629
-7:	Choose random next:650
-8:	Choose random next:154
-9:	Choose ordered next from 3 node(s):155
-10:	Choose random next:692
-11:	Choose ordered next from 1 node(s):669
-12:	Choose ordered next from 2 node(s):670
-13:	Choose ordered next from 1 node(s):671
-14:	Choose ordered next from 1 node(s):672
-15:	Choose random next:585
-16:	Choose ordered next from 2 node(s):597
-17:	Choose random next:1147
-18:	Choose random next:572
-19:	Choose ordered next from 1 node(s):573
-20:	Choose random next:369
-21:	Choose ordered next from 1 node(s):370
-22:	Choose ordered next from 1 node(s):371
-23:	Choose ordered next from 1 node(s):372
-24:	Choose ordered next from 1 node(s):335
-25:	Choose ordered next from 2 node(s):360
-26:	Choose random next:1045
-27:	Choose ordered next from 2 node(s):1046
-28:	Choose ordered next from 1 node(s):1047
-29:	Choose ordered next from 1 node(s):1048
-30:	Choose ordered next from 1 node(s):1045
-31:	Choose random next:850
-32:	Choose random next:147
-33:	Choose random next:400
-34:	Choose ordered next from 2 node(s):413
-35:	Choose ordered next from 4 node(s):414
-36:	Choose ordered next from 1 node(s):413
-37:	Choose ordered next from 4 node(s):414
-38:	Choose ordered next from 1 node(s):413
-39:	Choose ordered next from 4 node(s):414
-40:	Choose random next:608
-41:	Choose ordered next from 1 node(s):609
-42:	Choose random next:755
-43:	Choose ordered next from 1 node(s):756
-44:	Meet an end, 44:	Choose random head:372
-45:	Choose ordered next from 1 node(s):335
-46:	Choose ordered next from 2 node(s):336
-47:	Choose ordered next from 1 node(s):337
-48:	Choose random next:127
+MarkovChain [UniqueMeasureCount=1284, ReceivedMeasureCount=3202, totalVoidMeasureCountInHeadAndTails=696, AverageLength=89, seed=1547191320245]
+Enter path of output Midi File:	[Your input]+"1547191320245.mid"
+Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\pureVocaloid-1547191320245.mid
+1:	Choose original head:1079
+2:	Choose ordered next from 2 node(s):1080
+3:	Choose ordered next from 1 node(s):1079
+4:	Choose ordered next from 2 node(s):1081
+5:	Choose random next:803
+6:	Choose ordered next from 2 node(s):811
+7:	Choose ordered next from 1 node(s):805
+8:	Choose ordered next from 1 node(s):806
+9:	Choose ordered next from 1 node(s):807
+10:	Choose ordered next from 2 node(s):812
+11:	Choose ordered next from 1 node(s):813
+12:	Choose random next:592
+13:	Choose ordered next from 1 node(s):593
+14:	Choose ordered next from 1 node(s):594
+15:	Choose ordered next from 1 node(s):595
+16:	Choose ordered next from 1 node(s):131
+17:	Choose ordered next from 2 node(s):132
+18:	Choose ordered next from 3 node(s):133
+19:	Choose random next:813
+20:	Choose ordered next from 1 node(s):814
+21:	Choose random next:865
+22:	Choose ordered next from 1 node(s):866
+23:	Choose random next:394
+24:	Choose ordered next from 1 node(s):395
+25:	Choose ordered next from 2 node(s):409
+26:	Choose ordered next from 1 node(s):410
+27:	Choose ordered next from 1 node(s):397
+28:	Choose ordered next from 2 node(s):398
+29:	Choose ordered next from 1 node(s):399
+30:	Choose random next:783
+31:	Choose ordered next from 1 node(s):784
+32:	Choose ordered next from 1 node(s):785
+33:	Choose ordered next from 1 node(s):786
+34:	Choose ordered next from 1 node(s):758
+35:	Choose ordered next from 1 node(s):759
+36:	Choose ordered next from 1 node(s):760
+37:	Choose random next:1022
+38:	Choose ordered next from 1 node(s):1023
+39:	Choose ordered next from 2 node(s):1028
+40:	Choose ordered next from 1 node(s):1007
+41:	Choose ordered next from 9 node(s):1016
+42:	Choose ordered next from 1 node(s):1007
 Exit because no because
 
 GenerateOK!
-MeasureCnt:48
+MeasureCnt:42
 write file OK!

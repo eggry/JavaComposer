@@ -1,92 +1,81 @@
 Enter path of Midi File(-1 to stop):
 
 ReadOK!
-MarkovChain [UniqueMeasureCount=440, ReceivedMeasureCount=733, totalVoidMeasureCountInHeadAndTails=264, AverageLength=78, seed=1547186895258]
-Enter path of output Midi File:	[Your input]+"1547186895258.mid"
-Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\song-1547186895258.mid
-1:	Choose random head:324
-2:	Choose ordered next from 1 node(s):325
-3:	Choose ordered next from 1 node(s):326
-4:	Choose ordered next from 1 node(s):327
-5:	Choose ordered next from 1 node(s):328
-6:	Choose ordered next from 1 node(s):329
-7:	Choose random next:59
-8:	Choose random next:273
-9:	Choose ordered next from 1 node(s):274
-10:	Choose ordered next from 1 node(s):275
-11:	Choose random next:315
-12:	Choose ordered next from 1 node(s):316
-13:	Choose ordered next from 1 node(s):317
-14:	Choose ordered next from 1 node(s):318
-15:	Choose ordered next from 1 node(s):319
-16:	Choose ordered next from 1 node(s):320
-17:	Choose random next:7
-18:	Choose ordered next from 1 node(s):8
-19:	Choose ordered next from 1 node(s):9
-20:	Choose ordered next from 1 node(s):10
-21:	Choose random next:229
-22:	Choose ordered next from 1 node(s):230
-23:	Choose random next:438
-24:	Choose ordered next from 1 node(s):439
-25:	Meet an end, 25:	Choose original head:247
-26:	Choose ordered next from 1 node(s):248
-27:	Choose ordered next from 1 node(s):249
-28:	Choose ordered next from 1 node(s):250
-29:	Choose ordered next from 1 node(s):251
-30:	Choose ordered next from 1 node(s):252
-31:	Choose ordered next from 1 node(s):253
-32:	Choose ordered next from 1 node(s):254
-33:	Choose random next:224
-34:	Choose random next:291
-35:	Choose ordered next from 1 node(s):292
-36:	Choose ordered next from 1 node(s):293
-37:	Choose ordered next from 1 node(s):294
-38:	Choose ordered next from 1 node(s):295
-39:	Choose ordered next from 1 node(s):296
-40:	Choose ordered next from 1 node(s):297
-41:	Choose ordered next from 1 node(s):298
-42:	Choose ordered next from 1 node(s):299
-43:	Choose random next:8
-44:	Choose ordered next from 1 node(s):9
-45:	Choose ordered next from 1 node(s):10
-46:	Choose ordered next from 1 node(s):11
-47:	Choose ordered next from 1 node(s):12
-48:	Choose ordered next from 1 node(s):13
-49:	Choose ordered next from 1 node(s):14
-50:	Choose ordered next from 1 node(s):15
-51:	Choose ordered next from 1 node(s):16
-52:	Choose ordered next from 1 node(s):17
-53:	Choose ordered next from 1 node(s):18
-54:	Choose ordered next from 1 node(s):19
-55:	Choose ordered next from 1 node(s):20
-56:	Choose ordered next from 1 node(s):21
-57:	Choose ordered next from 1 node(s):22
-58:	Choose ordered next from 1 node(s):23
-59:	Choose ordered next from 1 node(s):24
-60:	Choose random next:51
-61:	Choose ordered next from 1 node(s):52
-62:	Choose ordered next from 1 node(s):53
-63:	Choose ordered next from 1 node(s):54
-64:	Choose ordered next from 1 node(s):55
-65:	Choose ordered next from 1 node(s):56
-66:	Choose ordered next from 1 node(s):57
-67:	Choose ordered next from 1 node(s):58
-68:	Choose ordered next from 1 node(s):59
-69:	Choose ordered next from 1 node(s):60
-70:	Choose ordered next from 1 node(s):61
-71:	Choose ordered next from 1 node(s):62
-72:	Choose ordered next from 1 node(s):63
-73:	Choose ordered next from 1 node(s):64
-74:	Choose ordered next from 1 node(s):65
-75:	Choose ordered next from 1 node(s):66
-76:	Choose ordered next from 1 node(s):67
-77:	Choose random next:303
-78:	Choose ordered next from 1 node(s):304
-79:	Choose ordered next from 1 node(s):305
-80:	Choose ordered next from 1 node(s):306
-81:	Choose ordered next from 1 node(s):307
-Exit because outAve
+MarkovChain [UniqueMeasureCount=440, ReceivedMeasureCount=733, totalVoidMeasureCountInHeadAndTails=264, AverageLength=78, seed=1547191322716]
+Enter path of output Midi File:	[Your input]+"1547191322716.mid"
+Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\song-1547191322716.mid
+1:	Choose random head:177
+2:	Choose ordered next from 1 node(s):178
+3:	Choose ordered next from 1 node(s):179
+4:	Choose ordered next from 1 node(s):180
+5:	Choose ordered next from 1 node(s):181
+6:	Choose random next:423
+7:	Choose ordered next from 1 node(s):424
+8:	Choose ordered next from 1 node(s):425
+9:	Choose ordered next from 1 node(s):426
+10:	Choose ordered next from 1 node(s):427
+11:	Choose random next:3
+12:	Choose ordered next from 1 node(s):4
+13:	Choose ordered next from 1 node(s):5
+14:	Choose ordered next from 1 node(s):6
+15:	Choose random next:269
+16:	Choose ordered next from 1 node(s):270
+17:	Choose ordered next from 1 node(s):271
+18:	Choose ordered next from 1 node(s):272
+19:	Choose random next:152
+20:	Choose ordered next from 1 node(s):153
+21:	Choose ordered next from 1 node(s):133
+22:	Choose ordered next from 1 node(s):134
+23:	Choose ordered next from 1 node(s):135
+24:	Choose ordered next from 1 node(s):136
+25:	Choose ordered next from 1 node(s):137
+26:	Choose random next:430
+27:	Choose ordered next from 1 node(s):0
+28:	Choose ordered next from 1 node(s):431
+29:	Choose ordered next from 1 node(s):432
+30:	Choose ordered next from 1 node(s):433
+31:	Choose ordered next from 1 node(s):434
+32:	Choose ordered next from 1 node(s):435
+33:	Choose ordered next from 1 node(s):436
+34:	Choose ordered next from 1 node(s):437
+35:	Choose ordered next from 1 node(s):438
+36:	Choose random next:191
+37:	Choose ordered next from 1 node(s):192
+38:	Choose random next:119
+39:	Choose ordered next from 1 node(s):120
+40:	Choose ordered next from 1 node(s):121
+41:	Choose ordered next from 1 node(s):122
+42:	Choose random next:308
+43:	Choose ordered next from 1 node(s):309
+44:	Choose ordered next from 1 node(s):310
+45:	Choose ordered next from 1 node(s):311
+46:	Choose random next:252
+47:	Choose ordered next from 1 node(s):253
+48:	Choose ordered next from 1 node(s):254
+49:	Choose ordered next from 1 node(s):255
+50:	Choose ordered next from 1 node(s):256
+51:	Choose ordered next from 1 node(s):257
+52:	Choose ordered next from 1 node(s):258
+53:	Choose ordered next from 1 node(s):259
+54:	Choose ordered next from 1 node(s):260
+55:	Choose ordered next from 1 node(s):261
+56:	Choose random next:251
+57:	Choose random next:432
+58:	Choose ordered next from 1 node(s):433
+59:	Choose ordered next from 1 node(s):434
+60:	Choose ordered next from 1 node(s):435
+61:	Choose ordered next from 1 node(s):436
+62:	Choose random next:102
+63:	Choose ordered next from 1 node(s):103
+64:	Choose ordered next from 1 node(s):104
+65:	Choose ordered next from 1 node(s):105
+66:	Choose ordered next from 1 node(s):106
+67:	Choose ordered next from 1 node(s):107
+68:	Choose ordered next from 1 node(s):108
+69:	Choose ordered next from 1 node(s):109
+70:	Choose ordered next from 1 node(s):110
+Exit because meet tail
 
 GenerateOK!
-MeasureCnt:81
+MeasureCnt:70
 write file OK!

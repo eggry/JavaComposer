@@ -1,9 +1,9 @@
 Enter path of Midi File(-1 to stop):
 
 ReadOK!
-MarkovChain [UniqueMeasureCount=1, ReceivedMeasureCount=9, totalVoidMeasureCountInHeadAndTails=9, AverageLength=0, seed=1547186892983]
-Enter path of output Midi File:	[Your input]+"1547186892983.mid"
-Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\void-1547186892983.mid
+MarkovChain [UniqueMeasureCount=1, ReceivedMeasureCount=9, totalVoidMeasureCountInHeadAndTails=9, AverageLength=0, seed=1547191320042]
+Enter path of output Midi File:	[Your input]+"1547191320042.mid"
+Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\void-1547191320042.mid
 No head:-1
 Exit because no measure in the Chain
 
