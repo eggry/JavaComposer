@@ -19,6 +19,9 @@ public class Main {
 		String inputStr;
 		while(in.hasNextLine()&&!(inputStr=in.nextLine().trim()).equals("-1")) {
 			try {
+				if(inputStr.length()>=2&&inputStr.charAt(0)=='"'&&inputStr.charAt(inputStr.length()-1)=='"') {
+					inputStr=inputStr.substring(1, inputStr.length()-1);
+				}
 				DataInputStream dis=new DataInputStream(new FileInputStream(inputStr));
 				try {
 					MidiInputParser mip=new MidiInputParser(dis);
@@ -41,9 +44,16 @@ public class Main {
 		System.out.println("Enter path of output Midi File:\t[Your input]+\""+filename+"\"");
 		try {
 			inputStr=in.nextLine().trim();
+			if(inputStr.length()>=2&&inputStr.charAt(0)=='"'&&inputStr.charAt(inputStr.length()-1)=='"') {
+				inputStr=inputStr.substring(1, inputStr.length()-1);
+			}
+			if(inputStr.equals("")) {
+				inputStr=".\\";
+			}
 			File file=new File(inputStr+filename);
 			file.getParentFile().mkdirs();
 			file.createNewFile();
+			System.out.println("Output path:\t"+file.getCanonicalPath());
 			DataOutputStream dos=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
 			LinkedList<Measure> result=mc.generate();
 			System.out.println();

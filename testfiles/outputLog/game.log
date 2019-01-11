@@ -1,20 +1,39 @@
 Enter path of Midi File(-1 to stop):
 
 ReadOK!
-MarkovChain [UniqueMeasureCount=1788, ReceivedMeasureCount=2114, totalVoidMeasureCountInHeadAndTails=1, AverageLength=24, seed=1547148445222]
-Enter path of output Midi File:	[Your input]+"1547148445222.mid"
-1:	Choose random head:634
-2:	Choose ordered next from 1 node(s):635
-3:	Choose ordered next from 1 node(s):636
-4:	Choose ordered next from 1 node(s):637
-5:	Choose random next:116
-6:	Choose random next:778
-7:	Choose ordered next from 1 node(s):779
-8:	Choose ordered next from 1 node(s):780
-9:	Choose ordered next from 1 node(s):781
-10:	Choose ordered next from 1 node(s):782
-Exit because meet tail
+MarkovChain [UniqueMeasureCount=1788, ReceivedMeasureCount=2114, totalVoidMeasureCountInHeadAndTails=1, AverageLength=24, seed=1547182910333]
+Enter path of output Midi File:	[Your input]+"1547182910333.mid"
+Output path:	C:\Users\eggry\Documents\GitHub\JavaComposer\testfiles\output\game-1547182910333.mid
+1:	Choose random head:1038
+2:	Choose random next:678
+3:	Choose ordered next from 1 node(s):679
+4:	Choose ordered next from 1 node(s):680
+5:	Choose ordered next from 1 node(s):681
+6:	Choose ordered next from 1 node(s):682
+7:	Choose ordered next from 1 node(s):675
+8:	Choose ordered next from 1 node(s):676
+9:	Choose ordered next from 1 node(s):677
+10:	Choose ordered next from 1 node(s):678
+11:	Choose ordered next from 1 node(s):679
+12:	Choose ordered next from 1 node(s):680
+13:	Choose ordered next from 1 node(s):681
+14:	Choose random next:1406
+15:	Choose ordered next from 1 node(s):1407
+16:	Choose ordered next from 1 node(s):1408
+17:	Choose ordered next from 1 node(s):1409
+18:	Choose ordered next from 1 node(s):1410
+19:	Choose ordered next from 1 node(s):1411
+20:	Choose ordered next from 1 node(s):1412
+21:	Choose ordered next from 1 node(s):1413
+22:	Choose random next:176
+23:	Choose ordered next from 1 node(s):177
+24:	Choose ordered next from 2 node(s):180
+25:	Choose ordered next from 1 node(s):181
+26:	Choose ordered next from 2 node(s):182
+27:	Choose ordered next from 1 node(s):183
+28:	Choose ordered next from 1 node(s):184
+Exit because outAve
 
 GenerateOK!
-MeasureCnt:10
+MeasureCnt:28
 write file OK!
