@@ -63,7 +63,7 @@ class MidiOutputParser{
 			Arrays.sort(temp,0,top+1);//ÅÅĞòÊä³ö
 			for(int i=0;i<=top;i++) {
 				if(i==0)
-					transfer(0);
+					transfer(temp[i].startTime);
 				else
 					transfer(temp[i].startTime-temp[i-1].startTime);
 				music.add((byte) 0x90);
